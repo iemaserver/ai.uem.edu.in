@@ -175,7 +175,7 @@ export const researchHighlights = [
 ];
 
 export const faculty = [
-  { id: "Sudipta Sahana", name: "Prof. Dr. Sudipta Sahana", designation: "Head of the Department", email: "ananya@uem.edu.in", qualification: "Ph.D. IISc Bangalore", experience: 18, publications: 65, googleScholar: "#", scopus: "#", image: "/sudipta-sahana.jpeg" },
+  { id: "Sudipta Sahana", name: "Prof. Dr. Sudipta Sahana", designation: "Head of the Department", email: "sudipta.sahana@uem.edu.in", qualification: "Ph.D. IISc Bangalore", experience: 18, publications: 65, googleScholar: "#", scopus: "#", image: "/sudipta-sahana.jpeg" },
   { id: " Aniruddha Ghosh", name: "Prof. Dr. Aniruddha Ghosh", designation: "Assistant Head of Department", email: "rajesh@uem.edu.in", qualification: "Ph.D. IIT Bombay", experience: 15, publications: 52, googleScholar: "#", scopus: "#" },
   { id: "Anasuya Sengupta", name: "Prof. Anasuya Sengupta", designation: "Associate Professor", email: "priya@uem.edu.in", qualification: "Ph.D. IIT Madras", experience: 12, publications: 38, googleScholar: "#", scopus: "#" },
   { id: "Anjan Kumar Payra", name: "Prof. Anjan Kumar Payra", designation: "Associate Professor", email: "vikram@uem.edu.in", qualification: "Ph.D. CMU", experience: 10, publications: 30, googleScholar: "#", scopus: "#" },
@@ -672,20 +672,16 @@ export const achievements = {
 };
 
 export const alumniData = [
-  { id: 1, name: "Arjun Nambiar", batch: "2020", role: "Research Scientist", company: "Google Brain", linkedin: "#" },
-  { id: 2, name: "Shreya Kapoor", batch: "2019", role: "Senior ML Engineer", company: "Meta AI", linkedin: "#" },
-  { id: 3, name: "Vishal Reddy", batch: "2020", role: "Data Scientist", company: "Goldman Sachs", linkedin: "#" },
-  { id: 4, name: "Nandini Krishnan", batch: "2018", role: "AI Product Manager", company: "Microsoft", linkedin: "#" },
-  { id: 5, name: "Aditya Jain", batch: "2019", role: "ML Engineer", company: "NVIDIA", linkedin: "#" },
-  { id: 6, name: "Pooja Nair", batch: "2021", role: "Applied Scientist", company: "Amazon", linkedin: "#" },
-  { id: 7, name: "Rahul Bhat", batch: "2018", role: "CTO", company: "AI Startup (Funded)", linkedin: "#" },
-  { id: 8, name: "Divya Shetty", batch: "2020", role: "Research Engineer", company: "DeepMind", linkedin: "#" },
+  { id: 1, name: "Avik Agarwala", batch: "2021-2025", role: "Systems Engineer", company: "TCS", linkedin: "https://www.linkedin.com/in/avikagarwala/" },
+  { id: 2, name: "Alik Agarwala", batch: "2021-2025", role: "SDE", company: "Amazon", linkedin: "https://www.linkedin.com/in/alik-agarwala/" },
+  { id: 3, name: "Adrika Mondal", batch: "2021-2025", role: "SDE", company: "Amazon", linkedin: "https://www.linkedin.com/in/adrika-mondal/" },
+  { id: 4, name: "Nilanjana De", batch: "2021-2025", role: "SDE-1", company: "Amazon", linkedin: "https://www.linkedin.com/in/nilanjana-de-382bb3233/" },
 ];
 
 export const alumniTestimonials = [
-  { name: "Arjun Nambiar", batch: "2020", quote: "The rigorous curriculum and research exposure at IEM Kolkata's AI department directly prepared me for a career in cutting-edge AI research at Google." },
-  { name: "Shreya Kapoor", batch: "2019", quote: "The faculty mentorship and industry connections I built during my time here were instrumental in landing my role at Meta. Truly a world-class department." },
-  { name: "Nandini Krishnan", batch: "2018", quote: "From hackathons to research papers, every experience at the department shaped my ability to bridge technical AI expertise with product thinking." },
+  { name: "Avik Agarwala", batch: "2021-2025", quote: "The rigorous curriculum and hands-on projects at IEM Kolkata's AI department prepared me well for a professional career in tech." },
+  { name: "Alik Agarwala", batch: "2021-2025", quote: "The faculty mentorship and industry exposure I received here were instrumental in landing my role at Amazon." },
+  { name: "Adrika Mondal", batch: "2021-2025", quote: "From hackathons to real-world projects, every experience at the department shaped my technical skills and problem-solving ability." },
 ];
 
 export const galleryImages = [
