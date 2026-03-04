@@ -319,8 +319,8 @@ export const patents = [
   { id: 5, title: "Digital Authentication Based Laptop Security Lock", inventors: "Prof. (Dr.) Namrata Shaw, Prof. (Dr.) Harshit Srivastava", applicationNo: "IN202541005678", year: 2025, status: "Filed" as const },
   { id: 6, title: "Tap2Key: Bluetooth-Based USB Hardware Password Manager with 2-Factor Authentication for Secure and Cross-Platform Credential Management", inventors: "Prof. (Dr.) Sudipta Sahana", applicationNo: "IN202541006789", year: 2025, status: "Filed" as const },
   { id: 7, title: "Adaptive Wearable Navigation System for the Visually Impaired with Real-Time Sensor Fusion and Multi-Modal Feedback", inventors: "Prof. (Dr.) Sudipta Sahana", applicationNo: "IN202541007890", year: 2025, status: "Filed" as const },
-  { id: 8, title: "Smart Walker with Health Assistance & Emergency Alert System", inventors: "Avik Agarwala", applicationNo: "IN202541008901", year: 2025, status: "Filed" as const },
-  { id: 9, title: "A Smart Safety Footwear for Next Generation", inventors: "Avik Agarwala", applicationNo: "IN202541009012", year: 2025, status: "Filed" as const },
+  { id: 8, title: "Smart Walker with Health Assistance & Emergency Alert System", inventors: "Avik Agarwala", applicationNo: "IN202541008901", year: 2025, status: "Published" as const },
+  { id: 9, title: "A Smart Safety Footwear for Next Generation", inventors: "Avik Agarwala", applicationNo: "IN202541009012", year: 2025, status: "Granted" as const },
 ];
 
 export const phdScholars = [
