@@ -21,7 +21,7 @@ const VisionMission = () => (
           <h2 className="section-title">Vision</h2>
         </div>
         <blockquote className="border-l-4 border-accent pl-6 py-2 text-lg font-display text-foreground/80 italic mb-12">
-          "Our vision is to be the forerunner in AI and ML and to generate globally employable graduates with ethical principles who are dedicated to creating a thriving country."
+          "To be the forerunner in AI and ML and to generate globally employable graduates with ethical principles who are dedicated to creating a thriving country."
         </blockquote>
 
         <div className="section-header">
