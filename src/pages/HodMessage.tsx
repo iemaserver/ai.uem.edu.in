@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { messageFromHoD } from "@/data/departmentData";
 
-export const HodMessage = () => (
+const HodMessage = () => (
   <div>
     <section className="bg-primary py-16">
       <div className="container">
@@ -36,3 +36,4 @@ export const HodMessage = () => (
     </section>
   </div>
 );
+export default HodMessage;
