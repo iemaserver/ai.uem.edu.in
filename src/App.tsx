@@ -29,7 +29,7 @@ import Notices from "./pages/Notices";
 import Contact from "./pages/Contact";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import NotFound from "./pages/NotFound";
-
+import HodMessage from "./pages/HodMessage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -43,7 +43,7 @@ const App = () => (
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
-            <Route path="/about/hod-message" element={<PlaceholderPage />} />
+            <Route path="/about/hod-message" element={<HodMessage />} />
             <Route path="/about/vision-mission" element={<VisionMission />} />
             <Route path="/faculty" element={<Faculty />} />
             <Route path="/faculty/:id" element={<FacultyProfile />} />
