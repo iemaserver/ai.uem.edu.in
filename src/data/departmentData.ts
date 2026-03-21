@@ -208,7 +208,7 @@ export const fundedProjects = [
   { id: 15, title: "Navigation and Vision Assistance for Differently Abled People", pi: "Prof. (Dr.) Sudipta Sahana", coPi: "", agency: "Internal", amount: "₹60,000", duration: "14.08.2024 – 24.08.2024", status: "completed" as const, year: 2024 },
   { id: 16, title: "Smart AQI detection", pi: "Dr. Harshit Srivastava", coPi: "Prof. Purbita Chatterjee", agency: "Internal", amount: "₹28,300", duration: "15.01.2025 – 24.03.2025", status: "completed" as const, year: 2025 },
   { id: 17, title: "Real-Time destruction reading using deep learning Hydro Float: Drone-Based Garbage Detection and Collection", pi: "Dr. Harshit Srivastava", coPi: "Dr. Namrata Shaw", agency: "Internal", amount: "₹53,000", duration: "15.01.2025 – 24.03.2025", status: "completed" as const, year: 2025 },
-  { id: 18, title: "System for water bodies", pi: "Prof. Sramana Mukherjee", coPi: "", agency: "Internal", amount: "₹1,00,000", duration: "15.02.2025 – 24.04.2025", status: "completed" as const, year: 2025 },
+  // { id: 18, title: "System for water bodies", pi: "Prof. Sramana Mukherjee", coPi: "", agency: "Internal", amount: "₹1,00,000", duration: "15.02.2025 – 24.04.2025", status: "completed" as const, year: 2025 },
 ];
 
 export const finalYearProjects = [
