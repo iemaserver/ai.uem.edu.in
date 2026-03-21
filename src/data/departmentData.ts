@@ -484,7 +484,7 @@ export const events = [
   { id: 14, title: "RAAISA 3.0", date: "2025-12-15", type: "Conference" as const, description: "Research and Advances in AI and Smart Applications symposium.", speakers: [], venue: "Main Auditorium", semester: "Upcoming" },
   { id: 15, title: "Innofusion 2.0", date: "2025-10-20", type: "Hackathon" as const, description: "Innovation and technology fusion event.", speakers: [], venue: "Seminar Hall", semester: "Upcoming" },
   { id: 16, title: "HackSnippet 4.0", date: "2026-02-28", type: "Hackathon" as const, description: "Annual coding hackathon organized by the department.", speakers: [], venue: "TBA", semester: "Upcoming", link: "https://hacksnippet.iem.edu.in/" },
-  { id: 17, title: "Innofusion 3.0", date: "2026-07-27", type: "Hackathon" as const, description: "Innovation and technology fusion event.", speakers: [], venue: "TBA", semester: "Upcoming", link: "https://www.innofusion.tech/" },
+  { id: 17, title: "Innofusion 3.0",  date: "2026-07-25", endDate: "2026-07-26", type: "Hackathon" as const, description: "Innovation and technology fusion event.", speakers: [], venue: "TBA", semester: "Upcoming", link: "https://www.innofusion.tech/" },
 ];
 
 export const placementStats = [
