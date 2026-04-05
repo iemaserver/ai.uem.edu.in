@@ -6,7 +6,9 @@ import { aboutSnippet } from "@/data/departmentData";
 const labImages = [
   { id: 1, src: "/images/lab_01.jpeg", alt: "CSE (AI & ML) DEPT. IEDC LAB" },
   { id: 2, src: "/images/Lab_02.jpeg", alt: "Department Lab & Classroom" },
+  { id: 4, src: "/images/lab_04.jpeg", alt: "Department Lab & Classroom" },
   { id: 3, src: "/images/lab_03.jpeg", alt: "Department Lab & Classroom" },
+  { id: 5, src: "/images/lab_05.jpeg", alt: "Department Lab & Classroom" },
 ];
 
 const AboutSnippet = () => {
