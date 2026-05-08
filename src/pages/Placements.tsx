@@ -10,28 +10,42 @@ const Placements = () => (
       </div>
     </section>
 
-    {/* Hero Stats */}
-    <section className="py-12 bg-secondary">
+     {/* Hero Stats */}
+    {/* <section className="py-12 bg-secondary">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           <div className="bg-card border border-border rounded-lg px-6 py-5 text-center">
             <Users className="w-8 h-8 text-accent mx-auto mb-2" />
-            <p className="font-mono font-bold text-3xl text-primary mb-1">{placementStats[0].totalStudents}</p>
-            <p className="text-xs text-muted-foreground font-body">Total Students</p>
+            <p className="font-mono font-bold text-3xl text-primary mb-1">
+              {placementStats[0].totalStudents}
+            </p>
+            <p className="text-xs text-muted-foreground font-body">
+              Total Students
+            </p>
           </div>
           <div className="bg-card border border-border rounded-lg px-6 py-5 text-center">
             <TrendingUp className="w-8 h-8 text-accent mx-auto mb-2" />
-            <p className="font-mono font-bold text-3xl text-primary mb-1">{placementStats[0].studentsPlaced}</p>
-            <p className="text-xs text-muted-foreground font-body">Students Placed</p>
+            <p className="font-mono font-bold text-3xl text-primary mb-1">
+              {placementStats[0].studentsPlaced}
+            </p>
+            <p className="text-xs text-muted-foreground font-body">
+              Students Placed
+            </p>
           </div>
-          {/* <div className="bg-card border border-border rounded-lg px-6 py-5 text-center">
-            <GraduationCap className="w-8 h-8 text-accent mx-auto mb-2" />
-            <p className="font-mono font-bold text-3xl text-primary mb-1">{placementStats[0].placementPercentage}%</p>
-            <p className="text-xs text-muted-foreground font-body">Placement Rate</p>
-          </div> */}
+          {
+            // <div className="bg-card border border-border rounded-lg px-6 py-5 text-center">
+            //   <GraduationCap className="w-8 h-8 text-accent mx-auto mb-2" />
+            //   <p className="font-mono font-bold text-3xl text-primary mb-1">
+            //     {placementStats[0].placementPercentage}%
+            //   </p>
+            //   <p className="text-xs text-muted-foreground font-body">
+            //     Placement Rate
+            //   </p>
+            // </div>
+          }
         </div>
       </div>
-    </section>
+    </section> */}
 
     <section className="py-16">
       <div className="container">
@@ -44,23 +58,44 @@ const Placements = () => (
           <table className="w-full text-sm font-body">
             <thead>
               <tr className="border-b border-border text-left">
-                <th className="py-3 pr-4 font-semibold text-foreground">Batch</th>
-                <th className="py-3 pr-4 font-semibold text-foreground">Total Students</th>
-                <th className="py-3 pr-4 font-semibold text-foreground">Eligible Students</th>
-                <th className="py-3 font-semibold text-foreground">Students Placed</th>
+                <th className="py-3 pr-4 font-semibold text-foreground">
+                  Batch
+                </th>
+                <th className="py-3 pr-4 font-semibold text-foreground">
+                  Total Students
+                </th>
+                <th className="py-3 pr-4 font-semibold text-foreground">
+                  Eligible Students
+                </th>
+                <th className="py-3 font-semibold text-foreground">
+                  Students Placed
+                </th>
                 {/* <th className="py-3 font-semibold text-foreground">Percentage</th> */}
               </tr>
             </thead>
             <tbody>
-              {placementStats.map(s => (
-                <tr key={s.batch} className="border-b border-border/50 hover:bg-secondary/50 transition-colors">
-                  <td className="py-3 pr-4 font-medium text-foreground">{s.batch} (till June)</td>
-                  <td className="py-3 pr-4 text-muted-foreground">{s.totalStudents}</td>
-                  <td className="py-3 pr-4 text-muted-foreground">
-                    {s.eligibleStudents}
-                    <span className="text-xs block text-muted-foreground/70">({s.eligibilityCriteria})</span>
+              {placementStats.map((s) => (
+                <tr
+                  key={s.batch}
+                  className="border-b border-border/50 hover:bg-secondary/50 transition-colors"
+                >
+                  <td className="py-3 pr-4 font-medium text-foreground">
+                    {s.batch} (till June)
                   </td>
-                  <td className="py-3 font-mono text-foreground">{s.studentsPlaced}</td>
+                  <td className="py-3 pr-4 text-muted-foreground">
+                    {s.totalStudents}
+                  </td>
+                  <td className="py-3 pr-4 text-muted-foreground">
+                    {/* {s.eligibleStudents}
+                    <span className="text-xs block text-muted-foreground/70">
+                      ({s.eligibilityCriteria})
+                    </span> */}
+                    {"Coming Soon"}
+                  </td>
+                  <td className="py-3 pr-4 text-muted-foreground">
+                    {/* {s.studentsPlaced} */}
+                    {"Coming Soon"}
+                  </td>
                   {/* <td className="py-3 font-mono text-foreground">{s.placementPercentage}%</td> */}
                 </tr>
               ))}
