@@ -30,7 +30,7 @@ export const programs = [
   {
     name: "B.Tech in CSE (AI)",
     duration: "4 Years",
-    intake: 300,
+    intake: 360,
     description: "A rigorous undergraduate program blending core CS fundamentals with specialized AI and ML coursework, industry projects, and research exposure.",
     link: "/academics/programs",
     eligibility: "JEE Main qualified. Minimum 75% in 10+2 with PCM.",
