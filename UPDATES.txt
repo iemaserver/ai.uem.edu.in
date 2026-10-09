@@ -189,6 +189,15 @@ DATE: 2026-09-08 (Status: Learned Rule & Publication Author Standardization)
     - Academic Session Mapping: Evaluated the grant date 23/07/2025 (month 7 / July starts the new academic year) to correctly map to Academic Session "2025–2026".
     - Automated Tests & Packaging: Added unit tests validating patent #12 data, inventor name, design number, and academic year calculation (18/18 tests green). Rebuilt production bundle and refreshed `dist.zip` (in workspace root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
 
+35. Added 4 Latest Notices to Home Page & Notices Page (departmentData.ts, department.test.ts)
+    - Latest Notices Added:
+      1. Library (05/08/2026, general): Open 24x7x365 for self-study (book issue/return unavailable on weekends/holidays).
+      2. NPTEL (29/07/2026, exam): Set 1 course enrollment for Jul–Dec 2026 extended to August 3, 2026; mandatory tracking checkbox instructions for B.Tech (Honours) credits & reimbursements (Circulars: 29/7/26 & 21/7/26).
+      3. Vision 2030 (20/07/2026, circular): IEM UEM Vision 2030 industry readiness plan mandating 9 internships, 10 live projects, 10 certifications, hackathons, AI/LLM training, and robust DSA preparation over 4 years.
+      4. Grant-in-Aid (20/07/2026, circular): Faculty and students application for Grant-in-Aid research and startup projects in AI/IoT/Drones/Robotics via DST/AICTE format to VC/Director's Office and kamakhyaghatakcu@gmail.com by August 15, 2026.
+    - Home Page Integration: Prioritized the 4 latest notices as `isImportant: true` at the top of the roster, ensuring they automatically display in the Home Page's marquee ticker and the 4 top notice cards.
+    - Automated Tests & Packaging: Added comprehensive unit test in `department.test.ts` validating all notice fields, dates, categories, and important status (19/19 tests green). Rebuilt production bundle and refreshed `dist.zip` (in workspace root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
+
 ================================================================================
 
 

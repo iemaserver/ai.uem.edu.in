@@ -13,6 +13,7 @@ import {
   events,
   achievements,
   phdScholars,
+  notices,
 } from "@/data/departmentData";
 import { getAcademicYear, ACADEMIC_YEAR_OPTIONS } from "@/lib/academicYear";
 import {
@@ -360,5 +361,31 @@ describe("Department Data Integrity", () => {
       expect(s.enrolmentNumber).toBeTruthy();
       expect(["ongoing", "awarded"]).toContain(s.status);
     });
+  });
+
+  it("should have valid notices with the 4 latest notices prioritized as important", () => {
+    expect(notices).toHaveLength(14);
+    const top4 = notices.slice(0, 4);
+    expect(top4.every((n) => n.isImportant)).toBe(true);
+
+    const libraryNotice = notices.find((n) => n.id === 1);
+    expect(libraryNotice?.title).toContain("Library: The Library remains open 24x7x365");
+    expect(libraryNotice?.category).toBe("general");
+    expect(libraryNotice?.publishedDate).toBe("2026-08-05");
+
+    const nptelNotice = notices.find((n) => n.id === 2);
+    expect(nptelNotice?.title).toContain("NPTEL Set 1 course enrollment for Jul–Dec 2026 is extended to August 3, 2026");
+    expect(nptelNotice?.category).toBe("exam");
+    expect(nptelNotice?.publishedDate).toBe("2026-07-29");
+
+    const visionNotice = notices.find((n) => n.id === 3);
+    expect(visionNotice?.title).toContain("Vision 2030");
+    expect(visionNotice?.category).toBe("circular");
+    expect(visionNotice?.publishedDate).toBe("2026-07-20");
+
+    const grantNotice = notices.find((n) => n.id === 4);
+    expect(grantNotice?.title).toContain("Grant-in-Aid");
+    expect(grantNotice?.category).toBe("circular");
+    expect(grantNotice?.publishedDate).toBe("2026-07-20");
   });
 });
