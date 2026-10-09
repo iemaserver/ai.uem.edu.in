@@ -198,6 +198,14 @@ DATE: 2026-09-08 (Status: Learned Rule & Publication Author Standardization)
     - Home Page Integration: Prioritized the 4 latest notices as `isImportant: true` at the top of the roster, ensuring they automatically display in the Home Page's marquee ticker and the 4 top notice cards.
     - Automated Tests & Packaging: Added comprehensive unit test in `department.test.ts` validating all notice fields, dates, categories, and important status (19/19 tests green). Rebuilt production bundle and refreshed `dist.zip` (in workspace root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
 
+36. Added 3 Term-I Examination Schedules to Notices & Home Page (departmentData.ts, NoticesSection.tsx, department.test.ts)
+    - 3 New Examination Schedule Notices Added:
+      1. Even Semester 2026 - 2027 Term - I Practical/Sessional Examination Schedule for 2024-2028 and 2025-2029 Batch from 18.09.2026 (date: 18.09.2026, category: exam, isImportant: true).
+      2. Odd Semester 2026 - 2027 Term - I Examination Schedule for 2025-2029 and 2024-2028 Batch from 07.09.2026 (date: 07.09.2026, category: exam, isImportant: true).
+      3. Innovative Project – I (PRJCS381), Innovative Project – III (PRJCS581) TERM - I Examination Schedule for 2025-2029 Batch from 07.09.2026 (date: 07.09.2026, category: exam, isImportant: true).
+    - Home Page Display Expansion: Updated `NoticesSection.tsx` to display all 7 latest notices in the Home Page's notice list and keep them active in the marquee ticker.
+    - Automated Tests & Packaging: Updated unit test suite in `department.test.ts` to assert all 17 notices with 7 top priority notices (19/19 tests green). Rebuilt production bundle and updated `dist.zip` (in workspace root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
+
 ================================================================================
 
 

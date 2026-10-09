@@ -363,27 +363,42 @@ describe("Department Data Integrity", () => {
     });
   });
 
-  it("should have valid notices with the 4 latest notices prioritized as important", () => {
-    expect(notices).toHaveLength(14);
-    const top4 = notices.slice(0, 4);
-    expect(top4.every((n) => n.isImportant)).toBe(true);
+  it("should have valid notices with the 7 latest notices prioritized as important", () => {
+    expect(notices).toHaveLength(17);
+    const top7 = notices.slice(0, 7);
+    expect(top7.every((n) => n.isImportant)).toBe(true);
 
-    const libraryNotice = notices.find((n) => n.id === 1);
+    const practicalNotice = notices.find((n) => n.id === 1);
+    expect(practicalNotice?.title).toContain("Even Semester 2026 - 2027 Term - I Practical/Sessional Examination Schedule");
+    expect(practicalNotice?.category).toBe("exam");
+    expect(practicalNotice?.publishedDate).toBe("2026-09-18");
+
+    const oddExamNotice = notices.find((n) => n.id === 2);
+    expect(oddExamNotice?.title).toContain("Odd Semester 2026 - 2027 Term - I Examination Schedule");
+    expect(oddExamNotice?.category).toBe("exam");
+    expect(oddExamNotice?.publishedDate).toBe("2026-09-07");
+
+    const projectExamNotice = notices.find((n) => n.id === 3);
+    expect(projectExamNotice?.title).toContain("Innovative Project – I (PRJCS381), Innovative Project – III (PRJCS581)");
+    expect(projectExamNotice?.category).toBe("exam");
+    expect(projectExamNotice?.publishedDate).toBe("2026-09-07");
+
+    const libraryNotice = notices.find((n) => n.id === 4);
     expect(libraryNotice?.title).toContain("Library: The Library remains open 24x7x365");
     expect(libraryNotice?.category).toBe("general");
     expect(libraryNotice?.publishedDate).toBe("2026-08-05");
 
-    const nptelNotice = notices.find((n) => n.id === 2);
+    const nptelNotice = notices.find((n) => n.id === 5);
     expect(nptelNotice?.title).toContain("NPTEL Set 1 course enrollment for Jul–Dec 2026 is extended to August 3, 2026");
     expect(nptelNotice?.category).toBe("exam");
     expect(nptelNotice?.publishedDate).toBe("2026-07-29");
 
-    const visionNotice = notices.find((n) => n.id === 3);
+    const visionNotice = notices.find((n) => n.id === 6);
     expect(visionNotice?.title).toContain("Vision 2030");
     expect(visionNotice?.category).toBe("circular");
     expect(visionNotice?.publishedDate).toBe("2026-07-20");
 
-    const grantNotice = notices.find((n) => n.id === 4);
+    const grantNotice = notices.find((n) => n.id === 7);
     expect(grantNotice?.title).toContain("Grant-in-Aid");
     expect(grantNotice?.category).toBe("circular");
     expect(grantNotice?.publishedDate).toBe("2026-07-20");

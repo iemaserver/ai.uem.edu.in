@@ -288,6 +288,33 @@ export const notices: Notice[] = [
   {
     id: 1,
     title:
+      "Even Semester 2026 - 2027 Term - I Practical/Sessional Examination Schedule for 2024-2028 and 2025-2029 Batch from 18.09.2026",
+    date: "2026-09-18",
+    publishedDate: "2026-09-18",
+    category: "exam",
+    isImportant: true,
+  },
+  {
+    id: 2,
+    title:
+      "Odd Semester 2026 - 2027 Term - I Examination Schedule for 2025-2029 and 2024-2028 Batch from 07.09.2026",
+    date: "2026-09-07",
+    publishedDate: "2026-09-07",
+    category: "exam",
+    isImportant: true,
+  },
+  {
+    id: 3,
+    title:
+      "Innovative Project – I (PRJCS381), Innovative Project – III (PRJCS581) TERM - I Examination Schedule for 2025-2029 Batch from 07.09.2026",
+    date: "2026-09-07",
+    publishedDate: "2026-09-07",
+    category: "exam",
+    isImportant: true,
+  },
+  {
+    id: 4,
+    title:
       "Library: The Library remains open 24x7x365 for self-study (note: book issue/return services are unavailable on weekends and holidays).",
     date: "2026-08-05",
     publishedDate: "2026-08-05",
@@ -295,7 +322,7 @@ export const notices: Notice[] = [
     isImportant: true,
   },
   {
-    id: 2,
+    id: 5,
     title:
       "NPTEL: NPTEL Set 1 course enrollment for Jul–Dec 2026 is extended to August 3, 2026, and mandatory exam registration requires checking tracking boxes for B.Tech (Honours) credits and reimbursements (Circulars: 29/7/26 & 21/7/26).",
     date: "2026-08-03",
@@ -304,7 +331,7 @@ export const notices: Notice[] = [
     isImportant: true,
   },
   {
-    id: 3,
+    id: 6,
     title:
       "Vision 2030: The IEM UEM Vision 2030 industry readiness plan mandates 9 internships, 10 live projects, 10 certifications, hackathons, AI/LLM training, and robust DSA preparation over 4 years.",
     date: "2026-07-20",
@@ -313,7 +340,7 @@ export const notices: Notice[] = [
     isImportant: true,
   },
   {
-    id: 4,
+    id: 7,
     title:
       "Grant-in-Aid: Faculty and students can apply for Grant-in-Aid research and startup projects in AI/IoT/Drones/Robotics via DST/AICTE format to the VC/Director's Office and kamakhyaghatakcu@gmail.com by August 15, 2026.",
     date: "2026-08-15",
@@ -322,7 +349,7 @@ export const notices: Notice[] = [
     isImportant: true,
   },
   {
-    id: 5,
+    id: 8,
     title: "NPTEL Examination Dates — March 21-22, 2026",
     date: "2026-03-21",
     publishedDate: "2026-01-02",
@@ -330,7 +357,7 @@ export const notices: Notice[] = [
     isImportant: false,
   },
   {
-    id: 6,
+    id: 9,
     title:
       "Term – II Examinations – Theory Papers (30 Marks) — March 23 to March 31, 2026",
     date: "2026-03-23",
@@ -339,7 +366,7 @@ export const notices: Notice[] = [
     isImportant: false,
   },
   {
-    id: 7,
+    id: 10,
     title:
       "End Semester Practical / Sessional Examinations & Viva-Voce (100 Marks) — April 1 to April 10, 2026",
     date: "2026-04-01",
@@ -348,7 +375,7 @@ export const notices: Notice[] = [
     isImportant: false,
   },
   {
-    id: 8,
+    id: 11,
     title:
       "End Semester Theoretical Examinations – Theory Papers (100 Marks) — April 13 to May 9, 2026",
     date: "2026-04-13",
@@ -357,7 +384,7 @@ export const notices: Notice[] = [
     isImportant: false,
   },
   {
-    id: 9,
+    id: 12,
     title:
       "NPTEL Examination Dates — April 17-18, April 25-26, 2026 & May 2-3, 2026",
     date: "2026-04-17",
@@ -366,7 +393,7 @@ export const notices: Notice[] = [
     isImportant: false,
   },
   {
-    id: 10,
+    id: 13,
     title: "Summer Internship Period (for Students) — May 11 to June 6, 2026",
     date: "2026-05-11",
     publishedDate: "2026-01-02",
@@ -374,7 +401,7 @@ export const notices: Notice[] = [
     isImportant: false,
   },
   {
-    id: 11,
+    id: 14,
     title:
       "Inter – Semester Break (for Faculty members) — May 18 to June 5, 2026",
     date: "2026-05-18",
@@ -383,7 +410,7 @@ export const notices: Notice[] = [
     isImportant: false,
   },
   {
-    id: 12,
+    id: 15,
     title: "Summer Semester — June 8 to July 5, 2026",
     date: "2026-06-08",
     publishedDate: "2026-01-02",
@@ -391,7 +418,7 @@ export const notices: Notice[] = [
     isImportant: false,
   },
   {
-    id: 13,
+    id: 16,
     title:
       "Commencement of Classes of Odd Semester 2026 (for existing batches) — July 6, 2026",
     date: "2026-07-06",
@@ -400,7 +427,7 @@ export const notices: Notice[] = [
     isImportant: false,
   },
   {
-    id: 14,
+    id: 17,
     title: "Publication of Results of Even Semester — By July, 2026",
     date: "2026-07-01",
     publishedDate: "2026-01-02",

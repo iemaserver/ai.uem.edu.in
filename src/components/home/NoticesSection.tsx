@@ -53,7 +53,7 @@ const NoticesSection = () => {
 
         {/* Notice list */}
         <div className="space-y-3">
-          {notices.slice(0, 4).map((notice) => (
+          {notices.slice(0, 7).map((notice) => (
             <div
               key={notice.id}
               className={`flex items-start gap-4 p-4 bg-card rounded-lg border transition-colors hover:border-primary/20 ${
