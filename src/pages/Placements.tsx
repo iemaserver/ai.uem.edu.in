@@ -1,16 +1,26 @@
 import { TrendingUp, Quote, GraduationCap, Users } from "lucide-react";
-import { placementStats, higherEducation, placementTestimonials, recruiters, industryMous } from "@/data/departmentData";
+import {
+  placementStats,
+  higherEducation,
+  placementTestimonials,
+  recruiters,
+  industryMous,
+} from "@/data/departmentData";
 
 const Placements = () => (
   <div>
     <section className="bg-primary py-16">
       <div className="container">
-        <p className="text-accent text-[11px] font-bold uppercase tracking-[2px] mb-2 font-body">Careers</p>
-        <h1 className="font-display text-3xl md:text-[38px] font-bold text-primary-foreground">Placements & Industry</h1>
+        <p className="text-accent text-[11px] font-bold uppercase tracking-[2px] mb-2 font-body">
+          Careers
+        </p>
+        <h1 className="font-display text-3xl md:text-[38px] font-bold text-primary-foreground">
+          Placements & Industry
+        </h1>
       </div>
     </section>
 
-     {/* Hero Stats */}
+    {/* Hero Stats */}
     {/* <section className="py-12 bg-secondary">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -67,7 +77,7 @@ const Placements = () => (
                 <th className="py-3 pr-4 font-semibold text-foreground">
                   Eligible Students
                 </th>
-                <th className="py-3 font-semibold text-foreground">
+                <th className="py-3 pr-4 font-semibold text-foreground">
                   Students Placed
                 </th>
                 {/* <th className="py-3 font-semibold text-foreground">Percentage</th> */}
@@ -112,18 +122,32 @@ const Placements = () => (
           <table className="w-full text-sm font-body">
             <thead>
               <tr className="border-b border-border text-left">
-                <th className="py-3 pr-4 font-semibold text-foreground">Name</th>
-                <th className="py-3 pr-4 font-semibold text-foreground">Batch</th>
-                <th className="py-3 font-semibold text-foreground">Higher Study</th>
+                <th className="py-3 pr-4 font-semibold text-foreground">
+                  Name
+                </th>
+                <th className="py-3 pr-4 font-semibold text-foreground">
+                  Batch
+                </th>
+                <th className="py-3 font-semibold text-foreground">
+                  Higher Study
+                </th>
               </tr>
             </thead>
             <tbody>
-              {higherEducation.map(student => (
-                <tr key={student.name} className="border-b border-border/50 hover:bg-secondary/50 transition-colors">
-                  <td className="py-3 pr-4 font-medium text-foreground">{student.name}</td>
-                  <td className="py-3 pr-4 text-muted-foreground">{student.batch}</td>
+              {higherEducation.map((student) => (
+                <tr
+                  key={student.name}
+                  className="border-b border-border/50 hover:bg-secondary/50 transition-colors"
+                >
+                  <td className="py-3 pr-4 font-medium text-foreground">
+                    {student.name}
+                  </td>
+                  <td className="py-3 pr-4 text-muted-foreground">
+                    {student.batch}
+                  </td>
                   <td className="py-3 text-muted-foreground">
-                    {student.program}{student.institution && ` - ${student.institution}`}
+                    {student.program}
+                    {student.institution && ` - ${student.institution}`}
                   </td>
                 </tr>
               ))}
@@ -137,9 +161,14 @@ const Placements = () => (
           <h2 className="section-title">Top Recruiters</h2>
         </div>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-16">
-          {recruiters.map(r => (
-            <div key={r} className="bg-card border border-border rounded-lg p-4 text-center card-hover">
-              <span className="font-body font-semibold text-sm text-foreground">{r}</span>
+          {recruiters.map((r) => (
+            <div
+              key={r}
+              className="bg-card border border-border rounded-lg p-4 text-center card-hover"
+            >
+              <span className="font-body font-semibold text-sm text-foreground">
+                {r}
+              </span>
             </div>
           ))}
         </div>

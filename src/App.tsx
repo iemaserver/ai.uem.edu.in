@@ -18,6 +18,8 @@ import PhdScholars from "./pages/PhdScholars";
 import FinalYearProjects from "./pages/FinalYearProjects";
 import AcademicsOverview from "./pages/AcademicsOverview";
 import AcademicsPrograms from "./pages/AcademicsPrograms";
+import AcademicsCurriculum from "./pages/AcademicsCurriculum";
+import AcademicsCalendar from "./pages/AcademicsCalendar";
 import Labs from "./pages/Labs";
 import LabDetail from "./pages/LabDetail";
 import Placements from "./pages/Placements";
@@ -30,6 +32,7 @@ import Contact from "./pages/Contact";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import NotFound from "./pages/NotFound";
 import HodMessage from "./pages/HodMessage";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -49,14 +52,20 @@ const App = () => (
             <Route path="/faculty/:id" element={<FacultyProfile />} />
             <Route path="/academics" element={<AcademicsOverview />} />
             <Route path="/academics/programs" element={<AcademicsPrograms />} />
-            <Route path="/academics/curriculum" element={<PlaceholderPage />} />
-            <Route path="/academics/calendar" element={<PlaceholderPage />} />
+            <Route path="/academics/curriculum" element={<AcademicsCurriculum />} />
+            <Route path="/academics/calendar" element={<AcademicsCalendar />} />
             <Route path="/research" element={<Research />} />
             <Route path="/research/projects" element={<ResearchProjects />} />
-            <Route path="/research/publications" element={<ResearchPublications />} />
+            <Route
+              path="/research/publications"
+              element={<ResearchPublications />}
+            />
             <Route path="/research/patents" element={<ResearchPatents />} />
             <Route path="/research/phd-scholars" element={<PhdScholars />} />
-            <Route path="/research/final-year-projects" element={<FinalYearProjects />} />
+            <Route
+              path="/research/final-year-projects"
+              element={<FinalYearProjects />}
+            />
             <Route path="/labs" element={<Labs />} />
             <Route path="/labs/:id" element={<LabDetail />} />
             <Route path="/placements" element={<Placements />} />

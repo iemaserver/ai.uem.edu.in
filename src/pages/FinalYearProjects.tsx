@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { User, GraduationCap } from "lucide-react";
 import { finalYearProjects } from "@/data/departmentData";
+import ResearchSubNav from "@/components/research/ResearchSubNav";
 
 const batches = [...new Set(finalYearProjects.map(p => p.batch))];
 
@@ -69,6 +70,7 @@ const FinalYearProjects = () => {
           ))}
         </div>
       </section>
+      <ResearchSubNav />
     </div>
   );
 };

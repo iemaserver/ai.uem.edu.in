@@ -1,10 +1,45 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Mail, ExternalLink, BookOpen } from "lucide-react";
-import { faculty, publications, fundedProjects } from "@/data/departmentData";
+import { faculty, publications, annexures, fundedProjects } from "@/data/departmentData";
+
+const cleanName = (name: string) =>
+  name
+    .replace(/Prof\.?/gi, "")
+    .replace(/\(Dr\.\)/gi, "")
+    .replace(/Dr\.?/gi, "")
+    .replace(/Mr\.?/gi, "")
+    .replace(/Ms\.?/gi, "")
+    .trim()
+    .toLowerCase();
+
+const isAuthorMatch = (authorStr: string, facultyName: string) => {
+  const cleanedAuthor = cleanName(authorStr);
+  const cleanedFaculty = cleanName(facultyName);
+  if (!cleanedAuthor || !cleanedFaculty) return false;
+
+  if (cleanedAuthor.includes(cleanedFaculty) || cleanedFaculty.includes(cleanedAuthor)) {
+    return true;
+  }
+
+  const facultyTokens = cleanedFaculty.split(/\s+/).filter(Boolean);
+  if (facultyTokens.length >= 2) {
+    const firstName = facultyTokens[0];
+    const lastName = facultyTokens[facultyTokens.length - 1];
+    if (cleanedAuthor.includes(lastName) && cleanedAuthor.includes(firstName)) {
+      return true;
+    }
+  }
+  return false;
+};
 
 const FacultyProfile = () => {
   const { id } = useParams();
-  const member = faculty.find(f => f.id === id);
+  const member = faculty.find(
+    (f) =>
+      f.id.trim() === id?.trim() ||
+      cleanName(f.id) === cleanName(id || "") ||
+      cleanName(f.name) === cleanName(id || "")
+  );
 
   if (!member) {
     return (
@@ -17,9 +52,14 @@ const FacultyProfile = () => {
     );
   }
 
-  const lastName = member.name.split(" ").slice(-1)[0];
-  const memberPubs = publications.filter(p => p.authors.some(a => a.includes(lastName.charAt(0) + ".")));
-  const memberProjects = fundedProjects.filter(p => p.pi === member.name);
+  const allPubs = [
+    ...publications.map(p => ({ ...p, uniqueId: `pub-${p.id}` })),
+    ...annexures.map(a => ({ ...a, uniqueId: `annex-${a.id}` })),
+  ];
+  const memberPubs = allPubs.filter(p => p.authors.some(a => isAuthorMatch(a, member.name)));
+  const memberProjects = fundedProjects.filter(
+    (p) => isAuthorMatch(p.pi, member.name) || (p.coPi ? isAuthorMatch(p.coPi, member.name) : false)
+  );
 
   return (
     <div>
@@ -91,7 +131,7 @@ const FacultyProfile = () => {
               </div>
               <div className="space-y-3 mb-12">
                 {memberPubs.map(p => (
-                  <div key={p.id} className="bg-card border border-border rounded-lg p-4 flex items-start gap-3">
+                  <div key={p.uniqueId} className="bg-card border border-border rounded-lg p-4 flex items-start gap-3">
                     <BookOpen className="w-4 h-4 text-accent shrink-0 mt-1" />
                     <div>
                       <p className="text-sm font-medium text-foreground font-body italic">{p.title}</p>

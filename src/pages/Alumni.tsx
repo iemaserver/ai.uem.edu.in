@@ -1,5 +1,6 @@
 import { Linkedin, Quote } from "lucide-react";
 import { alumniData, alumniTestimonials } from "@/data/departmentData";
+import MoreSubNav from "@/components/more/MoreSubNav";
 
 const Alumni = () => (
   <div>
@@ -62,6 +63,7 @@ const Alumni = () => (
         </div>
       </div>
     </section>
+    <MoreSubNav />
   </div>
 );
 

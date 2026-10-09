@@ -1,10 +1,22 @@
 import { useState } from "react";
 import { GraduationCap } from "lucide-react";
 import { phdScholars } from "@/data/departmentData";
+import ResearchSubNav from "@/components/research/ResearchSubNav";
+
+interface PhdScholar {
+  id: number;
+  enrolmentNumber?: string;
+  name: string;
+  supervisor: string;
+  coSupervisor?: string;
+  topic?: string;
+  yearOfJoining: number;
+  status: "ongoing" | "awarded";
+}
 
 const PhdScholars = () => {
   const [filter, setFilter] = useState<"all" | "ongoing" | "awarded">("all");
-  const filtered = filter === "all" ? phdScholars : phdScholars.filter(s => s.status === filter);
+  const filtered: PhdScholar[] = filter === "all" ? phdScholars : phdScholars.filter(s => s.status === filter);
 
   return (
     <div>
@@ -47,9 +59,9 @@ const PhdScholars = () => {
                         {s.status}
                       </span>
                     </div>
-                    {(s as any).enrolmentNumber && (
+                    {s.enrolmentNumber && (
                       <p className="text-xs text-muted-foreground font-body mb-1">
-                        Enrolment No: {(s as any).enrolmentNumber}
+                        Enrolment No: {s.enrolmentNumber}
                       </p>
                     )}
                     <p className="text-xs text-muted-foreground font-body mb-2">
@@ -66,6 +78,7 @@ const PhdScholars = () => {
           </div>
         </div>
       </section>
+      <ResearchSubNav />
     </div>
   );
 };

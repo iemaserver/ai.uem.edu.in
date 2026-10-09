@@ -1,0 +1,199 @@
+================================================================================
+IEM / UEM KOLKATA — CSE (AI) DEPARTMENT WEBSITE
+PROJECT UPDATE LOG & CHANGELOG
+================================================================================
+
+DATE: 2026-09-07 (Status: Bug Fixes, Code Mapping & Prefix Standardization)
+--------------------------------------------------------------------------------
+NOTE: Per instructions, all previously hidden and "Coming Soon" sections 
+remain strictly hidden as they were originally. Only bugs, data mappings, 
+and title consistency have been updated.
+
+1. Faculty Profiles (FacultyProfile.tsx) [BUG FIX]
+   - Previous: Author filter checked only "S.", causing missing papers and false matches.
+   - Updated:  Implemented normalized author-matching across publications and annexures.
+
+2. Research Publications (ResearchPublications.tsx) [BUG FIX]
+   - Previous: Duplicate IDs between publications and annexures caused key errors and accordion glitches.
+   - Updated:  Assigned unique compound IDs (pub-ID / annex-ID) to ensure independent expansion.
+
+3. Home Events Section & Events Page (EventsSection.tsx, Events.tsx) [BUG FIX]
+   - Previous: Date filter displayed a blank empty box on the homepage when event dates passed.
+   - Updated:  Added fallback to recent department events so homepage layout never breaks.
+
+4. Research Overview (Research.tsx) [BUG FIX]
+   - Previous: Metric counts (projects, publications, patents) were hardcoded static numbers.
+   - Updated:  Metrics now calculate dynamically from actual data array lengths.
+
+5. Gallery (Gallery.tsx, departmentData.ts) [BUG FIX]
+   - Previous: Blank grey boxes with no images; missing "faculty" filter button.
+   - Updated:  Added "faculty" category tab; wired existing lab photos from /images/; added category badges.
+
+6. Navigation (Navbar & Footer) [KEPT HIDDEN]
+   - Previous: Faculty link commented out in top navbar; absent from footer.
+   - Current:  Faculty link remains commented out in navbar and omitted from footer as before.
+
+7. Home Page Sections (Index.tsx) [KEPT HIDDEN]
+   - Previous: Faculty Spotlight, Achievements Banner, and Recruiters Strip were commented out.
+   - Current:  All three sections remain commented out as before.
+
+8. Placements (Placements.tsx) [KEPT HIDDEN / COMING SOON]
+   - Previous: Top metric cards commented out; table filled with "Coming Soon".
+   - Current:  Top metric cards remain commented out; table continues to display "Coming Soon" as before.
+
+9. Achievements (Achievements.tsx) [KEPT HIDDEN]
+   - Previous: Rankings (NIRF, NAAC, NBA) were commented out.
+   - Current:  Rankings remain commented out as before; no unannounced awards revealed.
+
+10. Curriculum & Academic Calendar (App.tsx) [KEPT HIDDEN / COMING SOON]
+    - Previous: Routed to "Coming Soon" placeholder page.
+    - Current:  Both remain routed to "Coming Soon" placeholder page as before.
+
+11. Title Standardization: Prof. (Dr.) Sudipta Sahana (departmentData.ts, FacultyProfile.tsx) [DATA & ROUTING]
+    - Previous: HOD name appeared inconsistently in some sections (e.g., bare "Sudipta" in publication #15).
+    - Updated:  Standardized to "Prof. (Dr.) Sudipta Sahana" across all sections (faculty, research highlights, funded projects, publications, patents, PhD scholars, and labs). Enhanced FacultyProfile routing to resolve with or without titles.
+
+12. Research Principal Investigators & Guides (departmentData.ts) [DATA MAPPING]
+    - Previous: Multiple PIs, Co-PIs, and project guides in the Research section lacked the "Prof." prefix (e.g. "Aniruddha Ghosh", "Dr. Aniruddha Ghosh", "Dr. Ramen Pal", "Dr. Harshit Srivastava", "Dr. Namrata Shaw").
+    - Updated:  Added "Prof. (Dr.)" prefix to all PIs, Co-PIs, guides, and supervisors across Research Highlights, Funded Projects, Final Year Projects, and PhD Scholars.
+
+13. Automated Testing (department.test.ts) [QA & VALIDATION]
+    - Previous: Only 1 dummy test existed.
+    - Updated:  Suite expanded to 9 unit tests verifying curriculum, calendar, publication IDs, placement stats, gallery categories, PI prefixes, and Prof. (Dr.) Sudipta Sahana naming (9/9 passed).
+
+================================================================================
+
+DATE: 2026-09-08 (Status: Learned Rule & Publication Author Standardization)
+--------------------------------------------------------------------------------
+14. Learned Naming Rules & Publication Author Names (GEMINI.md, departmentData.ts, department.test.ts)
+    - Clarification: Respected user manual adjustments — only specific professors have "Dr." and only few have "Prof. (Dr.)". Titles vary individually and are not blanket-prefixed.
+    - Publication & Annexure Authors: Strictly removed any "Prof." or "Dr." prefixes from publication/annexure author lists (authors must always be pure/plain names without academic titles).
+    - Rule Persistence: Added project guidelines in GEMINI.md to ensure the agent permanently adheres to this rule across all future tasks.
+    - Test Suite: Updated department.test.ts to validate that publication/annexure authors contain no academic prefixes and test suite passes 100% (10/10 tests green).
+
+15. Floating Back to Top Arrow on All Pages (BackToTopButton.tsx, Layout.tsx)
+    - Floating Action Arrow: Added floating Back to Top button with ArrowUp icon in Layout that smoothly fades in at the bottom-right corner when scrolling down (>300px) across all pages.
+    - Footer: Kept clean and centered as requested without redundant button.
+
+16. Research Subsections Cross-Navigation (ResearchSubNav.tsx)
+    - Added a bottom navigation section just above the footer across all 5 Research sub-pages (Funded Projects, Publications, Patents, Notable Final Year Projects, Ph.D. Scholars), excluding the Overview page.
+    - Automatically displays the other 4 research sub-sections with icons, descriptions, and jump links, plus a quick link back to the Research Overview.
+
+17. Year-Wise Filters for Funded Projects & Patents (ResearchProjects.tsx, ResearchPatents.tsx, ResearchPublications.tsx)
+    - Funded Projects: Added year-wise filter dropdown alongside status filter, added Year column to the table.
+    - Patents: Added year-wise filter dropdown and status filter pills, and added 2026 patent entries.
+    - Publications: Added graceful empty-state handling.
+
+18. Academic Year Session Categorization (July to June) & Hidden 2026 Funded Projects (academicYear.ts, departmentData.ts, ResearchProjects.tsx, ResearchPatents.tsx, ResearchPublications.tsx, department.test.ts)
+    - Format: Updated year categories and filter options to academic sessions: "2026-2027", "2025-2026", "2024-2025", "2023-2024".
+    - July to June Cycle: Created academicYear.ts utility mapping items between July 1 and June 30 of consecutive years.
+    - Hidden 2026 Funded Projects: Commented out the two 2026 funded projects in departmentData.ts as requested.
+    - Testing: Added unit tests validating July-to-June academic session calculations and verification that 2026 funded projects remain hidden (12/12 tests green).
+
+19. Academic Year Session Filtering & Chronological Ordering for Events & Achievements (Events.tsx, Achievements.tsx, academicYear.ts, departmentData.ts, department.test.ts)
+    - Academic Year ISO Parsing: Extended getAcademicYear in academicYear.ts to support ISO date formats (YYYY-MM-DD / YYYY/MM/DD), properly mapping dates like 2026-07-25 to "2026-2027" and 2026-02-28 to "2025-2026".
+    - Events Filtering & Sorting: Added Academic Year session dropdown filter (All Academic Years, 2026-2027, 2025-2026, 2024-2025, 2023-2024) to Events.tsx. Sorted events chronologically from new to old (descending). Added AY session badge to event cards.
+    - Achievements Filtering & Sorting: Added Academic Year session dropdown filter to Achievements.tsx. Added date timestamps to student achievements in departmentData.ts and sorted them chronologically from new to old. Added AY session badge and graceful empty-state handling.
+    - Automated Tests: Added tests validating ISO date parsing in getAcademicYear, event academic year session mapping, and student achievements chronological sorting (14/14 tests green).
+
+20. "More" Subsections Cross-Navigation (MoreSubNav.tsx, Achievements.tsx, Alumni.tsx, Gallery.tsx, Notices.tsx, Contact.tsx)
+    - Bottom Cross-Navigation: Created MoreSubNav component mirroring ResearchSubNav. It dynamically lists the other 4 subsections under the "More" menu with icons, titles, and descriptions, excluding the current active page.
+    - Subsection Integration: Mounted MoreSubNav just above the footer across all 5 "More" subsections: Achievements (/achievements), Alumni (/alumni), Gallery (/gallery), Notices (/notices), and Contact (/contact).
+    - Validation: Unit tests (14/14 green) and production build verified cleanly.
+
+21. Netlify Deployment Configuration & Production Build (public/_redirects, netlify.toml, dist/)
+    - SPA Routing Redirects: Added public/_redirects with `/* /index.html 200` to prevent 404 errors on browser page reloads for client-side routing.
+    - Netlify Config: Added netlify.toml defining publish directory ("dist"), build command ("npm run build"), and 200 SPA rewrite rule.
+    - Production Build: Successfully executed `npm run build` outputting fresh, production-ready static assets to the `dist/` directory.
+
+22. 2025-2029 CSE Course Structure & Batch-wise Curriculum Syllabus (curriculumData.ts, AcademicsCurriculum.tsx, App.tsx, department.test.ts)
+    - Docx Analysis & Data Extraction: Fully analyzed "CSE Course Structure 2025-2029.docx" covering Semesters I through VIII, Lecture/Tutorial/Practical/Sessional (L-T-P-S) hours, credit distributions, course codes, and course categories (Theory Papers, Practical Papers, Sessional Papers, Mandatory Requirements).
+    - Elective Tracks: Extracted Professional Electives structured into Track 1 (Artificial Intelligence) vs Track 2 (Data Science) across Semesters VI, VII, and VIII, plus Open Electives (Management, Cyber Law, Philosophy, Economics).
+    - Batch-Wise Dropdown: Created curriculum batch selection component allowing seamless switching between "Batch 2025–2029 (Latest Curriculum Scheme)" and "Batch 2021–2025 / 2024–2028 (Foundation Scheme)".
+    - Interactive Curriculum Page: Built AcademicsCurriculum.tsx with semester navigation tabs (Sem 1 to 8), a dedicated "Recommended Electives (Tracks)" tab, course tables grouped by category with subtotals, grand total contact hours and credits summaries, and academic guidelines legend (MAR, MOOCs, IFC, Internships).
+    - Routing & Tests: Mounted `/academics/curriculum` in App.tsx; added comprehensive unit tests covering all 8 semesters, elective tracks, and batch dropdown (15/15 tests green). Production build verified cleanly.
+
+23. Academics Cross-Navigation Shortcuts (AcademicsSubNav.tsx, AcademicsPrograms.tsx, AcademicsCurriculum.tsx, AcademicsCalendar.tsx, App.tsx, department.test.ts)
+    - AcademicsSubNav Component: Created AcademicsSubNav mirroring ResearchSubNav and MoreSubNav. Displays cards with icons, descriptions, hover transitions, and jump arrows for the other two academic subsections, plus a quick link back to Academics Overview.
+    - Integration Across All 3 Subsections: Mounted AcademicsSubNav just above the footer across:
+      - Programs Offered (/academics/programs)
+      - Curriculum & Syllabus (/academics/curriculum)
+      - Academic Calendar (/academics/calendar)
+    - Route Connection: Wired `/academics/calendar` directly to AcademicsCalendar in App.tsx.
+    - Automated Tests: Added unit test validating academic subsections routes, descriptions, and icons (16/16 tests green). Verified production build.
+
+24. Course Structure & Syllabus Integration for 2023-2027 & 2024-2028 Batches (curriculumData.ts, AcademicsCurriculum.tsx, department.test.ts)
+    - Document Analysis: Fully parsed both "CSE Course Structure 2023-2027.docx" and "CSE Course Structure 2024-2028.docx", extracting all course codes, titles, L-T-P-S hours, credits, and categories across Semesters III through VIII.
+    - Track Electives Extraction: Parsed PE-1 through PE-4 (Artificial Intelligence vs Data Science tracks) and OE-1 through OE-3 (Open Electives) for both batches.
+    - Data Layer Updates: Added batch2024_2028 ("Batch 2024–2028 (Revised Curriculum Scheme)") and batch2023_2027 ("Batch 2023–2027 (Course Curriculum Scheme)") to curriculumData.ts.
+    - Batch Dropdown: Updated curriculumBatches array with all 4 batches in chronological order (2025-2029, 2024-2028, 2023-2027, 2021-2025) with dynamic status badges ("1st Year", "2nd Year", "3rd Year").
+    - Verification & Tests: Added test suites for 2024-2028 and 2023-2027 batch structures, course credits, categories, and elective tracks (17/17 tests green). Production build verified cleanly.
+
+25. Production Build Packaging & Multi-Host Deployment Configuration (dist/, dist.zip, build.zip, public/.htaccess, vercel.json, netlify.toml)
+    - Multi-Platform SPA Routing:
+      - Netlify: `public/_redirects` (`/* /index.html 200`) and `netlify.toml`.
+      - Apache / cPanel / Shared Hosting: Added `public/.htaccess` with mod_rewrite rules to prevent 404s on direct URL navigation and reloads.
+      - Vercel: Added `vercel.json` with rewrites to `/index.html`.
+    - Production Compilation: Executed fresh `npm run build` outputting compiled, minified production assets into `dist/`.
+    - Deployment Archives: Generated clean, drag-and-drop ready ZIP archives `dist.zip` and `build.zip` (placed in workspace root and copied to Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`) for manual drag-and-drop hosting on Netlify Drop, cPanel, Hostinger, or any cloud host.
+
+26. Ph.D. Scholars Roster Update (departmentData.ts, PhdScholars.tsx, department.test.ts)
+    - Removed Scholar: Removed Sudipa Biswas from `phdScholars` in `departmentData.ts`.
+    - Renumbered Roster: Updated IDs sequentially (1: Sudipto Kumar Mondal, 2: Amitava Poddar).
+    - Automated Verification: Added unit test verifying `phdScholars` data integrity and confirming absence of Sudipa (18/18 tests green). Rebuilt production bundle and updated `dist.zip`.
+
+27. Added Upcoming Event: RAAISA 4.0 (departmentData.ts, Events.tsx, department.test.ts)
+    - Event Details: Added "RAAISA 4.0" (4th International Conference on Recent Advances in Artificial Intelligence & Smart Applications) scheduled for December 14th – 15th, 2026.
+    - Configuration: Configured start date "2026-12-14", end date "2026-12-15", type "Conference", venue "Main Auditorium", and semester "Upcoming". Automatically maps to academic session 2026-2027.
+    - Automated Tests & Build: Added unit test assertion in department.test.ts (18/18 tests green). Recompiled production build and updated `dist.zip` on Desktop.
+
+28. Added 15 Ongoing Internal Grant Projects (departmentData.ts, ResearchProjects.tsx, FacultyProfile.tsx, department.test.ts)
+    - Grant Projects Added: Added 15 internal funded projects (IDs 18–32) with status "ongoing", duration "03.08.2025 – 02.09.2025" (AY 2025-2026), and agency "Internal".
+    - Rich Details: Added full grant titles, PIs, Co-PIs, sanctioned amounts (ranging from ₹15,000 to ₹70,000), and updated UI tables to display Co-PIs.
+    - Profile Integration: Updated FacultyProfile.tsx so that both PIs and Co-PIs automatically display their funded projects under their profile.
+    - Tests & Build: Added test verification for all 15 ongoing internal grants (18/18 tests green). Recompiled production build and updated `dist.zip` on Desktop.
+
+29. Refined Internal Grant Projects Duration to Grant Date Only (departmentData.ts, ResearchProjects.tsx, department.test.ts)
+    - Grant Date Standardization: Replaced the application-grant range ("03.08.2025 – 02.09.2025") with the exact Grant Date ("02.09.2025") across all 15 ongoing internal grant projects (IDs 18–32).
+    - Table Header Refinement: Updated the table column header in `ResearchProjects.tsx` from "Duration" to "Duration / Grant Date" for optimal clarity across multi-year and fixed-date projects.
+    - Academic Year Preservation: Verified automatic academic year calculation correctly maps "02.09.2025" to session "2025-2026".
+    - Test Suite & Build: Updated unit test assertions in `department.test.ts` (18/18 tests green). Rebuilt production assets into `dist/` and refreshed `dist.zip` (in root and on Desktop).
+
+30. Added 17 Additional Ongoing Internal Grant Projects & Standardized Grant Dates Across All Projects (departmentData.ts, academicYear.ts, department.test.ts)
+    - 17 Additional Ongoing Projects: Added projects 33 through 49 with status "ongoing", agency "Internal", formatted sanctioned amounts, and the second date as Date of Grant (ranging from 02.03.2026 to 02.03.2030).
+    - Grant Date Standardization Across Existing Projects: Updated all prior completed projects (IDs 1–17) to replace date ranges with single grant dates (e.g., "17.02.2024", "24.08.2024", "24.03.2025"). All 49 funded projects now uniformly display their exact Grant Date.
+    - Academic Year Filter Expansion: Extended `ACADEMIC_YEAR_OPTIONS` in `academicYear.ts` to include sessions up to 2029-2030 ("2029-2030", "2028-2029", "2027-2028").
+    - Automated Test Verification & Packaging: Updated test assertions in `department.test.ts` (all 18/18 tests green). Rebuilt production bundle and updated `dist.zip` (in root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
+
+31. Comprehensive Academic Year Filter Audit & Strict July-Start June-End Boundary Enforcement (academicYear.ts, department.test.ts)
+    - Boundary Logic Enforcement: Verified and reinforced that any date from July 1 to December 31 of Year Y falls into Session Y-(Y+1), and any date from January 1 to June 30 of Year Y falls into Session (Y-1)-Y. The academic year strictly ends June 30th and the new academic year begins July 1st.
+    - Full Date Regex Overhaul: Upgraded `getAcademicYear` to accurately parse ISO (`YYYY-MM-DD`), dotted/slashed formats with flexible 2-4 digit years (`DD.MM.YYYY` / `DD.MM.YY`), and mixed natural language strings with ordinal numbers and dates (e.g., "July 25th-26th, 2024", "19 th and 20 th Dec 2024", "1st May, 2025").
+    - Cross-Section Data Verification: Verified all 49 funded projects, 18 events, 11 patents, 7 student achievements, 29 publications, and 32 annexures against the boundary rules. Corrected past conference occurrences (e.g., ICACA in Feb 2024 -> 2023-2024; HUMAN in Mar 2024 -> 2023-2024; ICHCSC in Jul 2024 -> 2024-2025; RAAISA in Dec 2024 -> 2024-2025).
+    - Unit Tests & Production Deployment: Added boundary test assertions for June 30 and July 1 transitions across multiple years (18/18 tests green). Recompiled production build and updated `dist.zip` on Desktop (`C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
+
+32. Corrected Year & Grant Date for Internal Projects 40–43 to 2026 (departmentData.ts, academicYear.ts, department.test.ts)
+    - Grant Date & Year Correction: Corrected projects 40, 41, 42, and 43 in `departmentData.ts` to `duration: "02.03.2026"` and `year: 2026`.
+    - Academic Session Alignment: Since March 2026 precedes June 30, 2026, all four projects accurately map into Academic Session 2025–2026.
+    - Options Cleanup: Trimmed `ACADEMIC_YEAR_OPTIONS` to `["2026-2027", "2025-2026", "2024-2025", "2023-2024"]`, eliminating empty future options.
+    - Automated Test Verification & Packaging: Updated test suite assertions in `department.test.ts` (18/18 tests green). Rebuilt production bundle and refreshed `dist.zip` (in root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
+
+33. Added New Publication by Kishan Singh & Matangini Chattopadhyay (departmentData.ts, department.test.ts)
+    - New Publication Added: Added publication entry #30: "A React-Based Framework for Device-Adaptable Responsive Web App Using PWA", authors: ["Kishan Singh", "Matangini Chattopadhyay"] (plain names without academic prefixes per guidelines), type: "conference", indexed in "Scopus".
+    - Details & DOI Integration: Preserved complete conference citation ("ICT: Applications and Social Interfaces, pp 212–221, 01 April 2026") and direct clickable DOI link (`https://doi.org/10.1007/978-3-032-19690-3_20`).
+    - Academic Session Mapping: Automatically maps into Academic Session 2025–2026 based on the 01 April 2026 publication date.
+    - Automated Tests & Packaging: Added unit test assertions in `department.test.ts` (18/18 tests green). Rebuilt production bundle and refreshed `dist.zip` (in workspace root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
+
+34. Added Patent by Dr. Moumita Chakraborty & Added Design No. to Header (departmentData.ts, ResearchPatents.tsx, department.test.ts)
+    - Added Patent #12: Added patent entry #12: "System for Automated CPR Delivery In Prehospital Cardiac Emergencies", inventor: "Dr. Moumita Chakraborty", applicationNo: "466951-001", date: "23/07/2025", year: 2025, status: "Granted".
+    - Table Header & Display Update: Updated the table column header in `ResearchPatents.tsx` from "Application No." to "Application No. / Design No." and displayed the date ("23/07/2025") cleanly alongside the design number.
+    - Academic Session Mapping: Evaluated the grant date 23/07/2025 (month 7 / July starts the new academic year) to correctly map to Academic Session "2025–2026".
+    - Automated Tests & Packaging: Added unit tests validating patent #12 data, inventor name, design number, and academic year calculation (18/18 tests green). Rebuilt production bundle and refreshed `dist.zip` (in workspace root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
+
+================================================================================
+
+
+
+
+
+
+

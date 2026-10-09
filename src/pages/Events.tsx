@@ -1,20 +1,25 @@
 import { useState } from "react";
 import { Calendar, MapPin, Users, ExternalLink } from "lucide-react";
 import { events } from "@/data/departmentData";
+import { getAcademicYear, ACADEMIC_YEAR_OPTIONS } from "@/lib/academicYear";
 
 const eventTypes = ["All", "Workshop", "Competition", "Hackathon", "Conference"] as const;
 
 const Events = () => {
+  const [sessionFilter, setSessionFilter] = useState<string | "all">("all");
   const [typeFilter, setTypeFilter] = useState("All");
   const [timeFilter, setTimeFilter] = useState<"all" | "upcoming" | "past">("all");
 
   const now = new Date().toISOString().split("T")[0];
-  const filtered = events.filter(e => {
-    if (typeFilter !== "All" && e.type !== typeFilter) return false;
-    if (timeFilter === "upcoming" && e.date < now) return false;
-    if (timeFilter === "past" && e.date >= now) return false;
-    return true;
-  });
+  const filtered = events
+    .filter(e => {
+      if (sessionFilter !== "all" && getAcademicYear(e.date) !== sessionFilter) return false;
+      if (typeFilter !== "All" && e.type !== typeFilter) return false;
+      if (timeFilter === "upcoming" && e.date < now) return false;
+      if (timeFilter === "past" && e.date >= now) return false;
+      return true;
+    })
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <div>
@@ -27,22 +32,39 @@ const Events = () => {
 
       <section className="py-16">
         <div className="container">
-          <div className="flex flex-wrap gap-2 mb-8">
-            {(["all", "upcoming", "past"] as const).map(t => (
-              <button key={t} onClick={() => setTimeFilter(t)}
-                className={`px-4 py-2 rounded-md text-sm font-semibold font-body capitalize transition-colors ${
-                  timeFilter === t ? "bg-primary text-primary-foreground" : "bg-secondary text-foreground hover:bg-secondary/80"
-                }`}
-              >{t === "all" ? "All" : t}</button>
-            ))}
-            <div className="w-px bg-border mx-1" />
-            {eventTypes.map(t => (
-              <button key={t} onClick={() => setTypeFilter(t)}
-                className={`px-3 py-2 rounded-md text-sm font-medium font-body transition-colors ${
-                  typeFilter === t ? "bg-accent text-accent-foreground" : "bg-secondary text-foreground hover:bg-secondary/80"
-                }`}
-              >{t}</button>
-            ))}
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <select
+              value={sessionFilter}
+              onChange={(e) => setSessionFilter(e.target.value)}
+              className="px-3 py-2 rounded-md border border-border bg-card text-sm font-body text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+            >
+              <option value="all">All Academic Years</option>
+              {ACADEMIC_YEAR_OPTIONS.map((y) => (
+                <option key={y} value={y}>{y}</option>
+              ))}
+            </select>
+
+            <div className="flex gap-1">
+              {(["all", "upcoming", "past"] as const).map(t => (
+                <button key={t} onClick={() => setTimeFilter(t)}
+                  className={`px-4 py-2 rounded-md text-sm font-semibold font-body capitalize transition-colors ${
+                    timeFilter === t ? "bg-primary text-primary-foreground" : "bg-secondary text-foreground hover:bg-secondary/80"
+                  }`}
+                >{t === "all" ? "All Time" : t}</button>
+              ))}
+            </div>
+
+            <div className="w-px h-6 bg-border mx-1 hidden sm:block" />
+
+            <div className="flex flex-wrap gap-1">
+              {eventTypes.map(t => (
+                <button key={t} onClick={() => setTypeFilter(t)}
+                  className={`px-3 py-2 rounded-md text-sm font-medium font-body transition-colors ${
+                    typeFilter === t ? "bg-accent text-accent-foreground" : "bg-secondary text-foreground hover:bg-secondary/80"
+                  }`}
+                >{t}</button>
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -65,7 +87,7 @@ const Events = () => {
                       )}
                     </div>
                     <div className="p-5 flex-1">
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex items-center gap-2 mb-2 flex-wrap">
                         <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full font-body ${
                           e.type === "Workshop" ? "bg-blue-100 text-blue-800"
                           : e.type === "Hackathon" ? "bg-purple-100 text-purple-800"
@@ -78,6 +100,9 @@ const Events = () => {
                             {e.semester}
                           </span>
                         )}
+                        <span className="text-[10px] font-medium bg-muted/60 text-muted-foreground px-2 py-0.5 rounded-full font-body ml-auto">
+                          AY {getAcademicYear(e.date)}
+                        </span>
                       </div>
                       <h3 className="font-display font-bold text-base text-foreground mb-2">{e.title}</h3>
                       <p className="text-sm text-muted-foreground font-body mb-3 line-clamp-2">{e.description}</p>
@@ -106,7 +131,15 @@ const Events = () => {
             })}
           </div>
           {filtered.length === 0 && (
-            <p className="text-center text-muted-foreground font-body py-12">No events found for the selected filters.</p>
+            <div className="text-center py-12">
+              <p className="text-muted-foreground font-body mb-3">No events found for the selected filters.</p>
+              <button
+                onClick={() => { setSessionFilter("all"); setTypeFilter("All"); setTimeFilter("all"); }}
+                className="px-3.5 py-1.5 rounded-md bg-secondary text-xs font-semibold text-primary hover:bg-secondary/80 transition-colors font-body"
+              >
+                Reset Filters
+              </button>
+            </div>
           )}
         </div>
       </section>

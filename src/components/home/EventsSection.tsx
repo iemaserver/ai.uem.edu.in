@@ -15,17 +15,19 @@ const EventsSection = () => {
   today.setHours(0, 0, 0, 0); // Set to start of day for accurate comparison
   
   const upcomingEvents = events.filter(event => new Date(event.date) >= today);
+  const displayEvents = upcomingEvents.length > 0 ? upcomingEvents.slice(0, 3) : [...events].reverse().slice(0, 3);
+  const hasUpcoming = upcomingEvents.length > 0;
 
   return (
     <section className="py-16 bg-secondary">
       <div className="container">
         <div className="section-header">
           <p className="section-label">What's Happening</p>
-          <h2 className="section-title">Upcoming Events</h2>
+          <h2 className="section-title">{hasUpcoming ? "Upcoming Events" : "Featured & Recent Events"}</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {upcomingEvents.map((event) => {
+          {displayEvents.map((event) => {
           const date = formatDate(event.date);
           return (
             <div

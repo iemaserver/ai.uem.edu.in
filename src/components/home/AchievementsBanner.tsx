@@ -4,7 +4,7 @@ import { achievements } from "@/data/departmentData";
 const highlightAchievements = [
   `Ranked ${achievements.rankings[0].rank} in ${achievements.rankings[0].metric}`,
   `${achievements.facultyAwards[0].award} at ${achievements.facultyAwards[0].body} — ${achievements.facultyAwards[0].recipient}`,
-  `${achievements.studentAchievements.filter(s => s.achievement.includes("Google")).length + achievements.studentAchievements.filter(s => s.achievement.includes("GSoC")).length} students selected for Google Summer of Code`,
+  `${achievements.studentAchievements[0].achievement} (${achievements.studentAchievements[0].event}) — ${achievements.studentAchievements[0].rank}`,
 ];
 
 const AchievementsBanner = () => (

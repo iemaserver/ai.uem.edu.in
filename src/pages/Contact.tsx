@@ -1,6 +1,7 @@
 import { MapPin, Phone, Mail } from "lucide-react";
 import { departmentInfo } from "@/data/departmentData";
 import { useState } from "react";
+import MoreSubNav from "@/components/more/MoreSubNav";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -46,7 +47,7 @@ const Contact = () => {
                 <table className="w-full text-sm font-body">
                   <tbody>
                     {[
-                      { name: "Prof. Dr. Sudipta Sahana", role: "Head of the Department", email: "sudipta.sahana@uem.edu.in" },
+                      { name: "Prof. (Dr.) Sudipta Sahana", role: "Head of the Department", email: "sudipta.sahana@uem.edu.in" },
                     ].map((c) => (
                       <tr key={c.name} className="border-b border-border last:border-0">
                         <td className="px-4 py-3 font-medium text-foreground">{c.name}</td>
@@ -112,6 +113,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <MoreSubNav />
     </div>
   );
 };

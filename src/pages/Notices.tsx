@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { notices } from "@/data/departmentData";
 import { Search, Paperclip } from "lucide-react";
+import MoreSubNav from "@/components/more/MoreSubNav";
 
 const categories = ["all", "exam", "result", "circular", "placement", "general"];
 
@@ -91,6 +92,7 @@ const Notices = () => {
           </div>
         </div>
       </section>
+      <MoreSubNav />
     </div>
   );
 };

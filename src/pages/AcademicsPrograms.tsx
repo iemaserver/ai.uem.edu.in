@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { GraduationCap, Clock, Users, CheckCircle, Briefcase } from "lucide-react";
 import { programs } from "@/data/departmentData";
+import AcademicsSubNav from "@/components/academics/AcademicsSubNav";
 
 const tabs = ["B.Tech", "Ph.D."];
 
@@ -82,6 +83,9 @@ const AcademicsPrograms = () => {
           </div>
         </div>
       </section>
+
+      {/* Academic Subsections Cross Navigation */}
+      <AcademicsSubNav />
     </div>
   );
 };

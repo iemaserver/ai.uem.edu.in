@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, FlaskConical, BookOpen, FileText, GraduationCap, Brain, Eye, Network, Database, Shield, Bot, Lightbulb } from "lucide-react";
-import { researchHighlights } from "@/data/departmentData";
+import {
+  researchHighlights,
+  fundedProjects,
+  publications,
+  annexures,
+  patents,
+  finalYearProjects,
+  phdScholars,
+} from "@/data/departmentData";
 
 const researchAreas = [
   { icon: Brain, name: "Machine Learning", desc: "Deep learning, neural architectures, optimization" },
@@ -11,41 +19,44 @@ const researchAreas = [
   { icon: Shield, name: "AI Ethics & Safety", desc: "Explainability, fairness, responsible AI deployment" },
 ];
 
-const Research = () => (
-  <div>
-    <section className="bg-primary py-16">
-      <div className="container">
-        <p className="text-accent text-[11px] font-bold uppercase tracking-[2px] mb-2 font-body">Innovation & Discovery</p>
-        <h1 className="font-display text-3xl md:text-[38px] font-bold text-primary-foreground">Research</h1>
-      </div>
-    </section>
+const Research = () => {
+  const totalPublications = publications.length + annexures.length;
 
-    <section className="py-16">
-      <div className="container">
-        <div className="section-header">
-          <p className="section-label">Focus Areas</p>
-          <h2 className="section-title">Research Thrust Areas</h2>
+  return (
+    <div>
+      <section className="bg-primary py-16">
+        <div className="container">
+          <p className="text-accent text-[11px] font-bold uppercase tracking-[2px] mb-2 font-body">Innovation & Discovery</p>
+          <h1 className="font-display text-3xl md:text-[38px] font-bold text-primary-foreground">Research</h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {researchAreas.map((area) => (
-            <div key={area.name} className="bg-card border border-border rounded-lg p-6 card-hover">
-              <area.icon className="w-8 h-8 text-accent mb-3" />
-              <h3 className="font-display font-bold text-base text-foreground mb-1">{area.name}</h3>
-              <p className="text-sm text-muted-foreground font-body">{area.desc}</p>
-            </div>
-          ))}
-        </div>
+      </section>
 
-        {/* Stats */}
-        <div className="bg-primary rounded-lg p-8 mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
-            {[
-              { val: "18", label: "Funded Projects" },
-              { val: "210+", label: "Publications" },
-              { val: "9", label: "Patents" },
-              { val: "37", label: "Notable Final Year Projects" },
-              { val: "8", label: "PhD Scholars" },
-            ].map((s) => (
+      <section className="py-16">
+        <div className="container">
+          <div className="section-header">
+            <p className="section-label">Focus Areas</p>
+            <h2 className="section-title">Research Thrust Areas</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {researchAreas.map((area) => (
+              <div key={area.name} className="bg-card border border-border rounded-lg p-6 card-hover">
+                <area.icon className="w-8 h-8 text-accent mb-3" />
+                <h3 className="font-display font-bold text-base text-foreground mb-1">{area.name}</h3>
+                <p className="text-sm text-muted-foreground font-body">{area.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Stats */}
+          <div className="bg-primary rounded-lg p-8 mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+              {[
+                { val: `${fundedProjects.length}`, label: "Funded Projects" },
+                { val: `${totalPublications}+`, label: "Publications" },
+                { val: `${patents.length}`, label: "Patents" },
+                { val: `${finalYearProjects.length}`, label: "Notable Final Year Projects" },
+                { val: `${phdScholars.length}`, label: "PhD Scholars" },
+              ].map((s) => (
               <div key={s.label}>
                 <div className="font-mono font-bold text-3xl text-primary-foreground">{s.val}</div>
                 <div className="text-xs uppercase tracking-wider text-primary-foreground/60 mt-1 font-body">{s.label}</div>
@@ -76,7 +87,8 @@ const Research = () => (
         </div>
       </div>
     </section>
-  </div>
-);
+    </div>
+  );
+};
 
 export default Research;
