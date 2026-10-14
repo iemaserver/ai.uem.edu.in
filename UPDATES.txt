@@ -225,7 +225,7 @@ DATE: 2026-09-08 (Status: Learned Rule & Publication Author Standardization)
 
 38. Refinements to Placements Page Layout & Tables (Placements.tsx, departmentData.ts, department.test.ts)
     - Batch 2022–2026 Total Students Updated: Adjusted total students count from 179 to 180 in `placementStats` and updated test assertions.
-    - Top Placed Students Section Added: Introduced a dedicated "Top Placed Students" section right before "Pursuing Higher Education", highlighting marquee alumni offers (Amazon SDEs, TCS Systems Engineer) with roles, companies, batch badges, and LinkedIn profile links.
+    - Top Placed Students Section Added: Introduced a dedicated "Top Placed Students" section right before "Pursuing Higher Education", highlighting marquee alumni offers arranged from high-to-low company tiers (Tier-1 Big Tech Amazon SDEs first: Alik Agarwala, Adrika Mondal, Nilanjana De, followed by TCS Systems Engineer: Avik Agarwala) with roles, company names, batch badges, and LinkedIn profile links.
     - Batch Table Column Adjustments: Removed "Drive Status", "Students Placed", and "Placement %" columns from the batch statistics table to present a focused view on Total Students, Total Job Offers, Multiple Offers, and Higher Studies.
     - Section Header Renamed: Renamed the batch overview section title to "Batch-Wise Placement and Higher Studies Statistics".
     - Company Table Removal: Removed the entire Company-Wise Placement Breakdown table and search/filter bar as requested.

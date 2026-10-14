@@ -3402,14 +3402,6 @@ export const achievements = {
 export const alumniData = [
   {
     id: 1,
-    name: "Avik Agarwala",
-    batch: "2021-2025",
-    role: "Systems Engineer",
-    company: "TCS",
-    linkedin: "https://www.linkedin.com/in/avikagarwala/",
-  },
-  {
-    id: 2,
     name: "Alik Agarwala",
     batch: "2021-2025",
     role: "SDE",
@@ -3417,7 +3409,7 @@ export const alumniData = [
     linkedin: "https://www.linkedin.com/in/alik-agarwala/",
   },
   {
-    id: 3,
+    id: 2,
     name: "Adrika Mondal",
     batch: "2021-2025",
     role: "SDE",
@@ -3425,12 +3417,20 @@ export const alumniData = [
     linkedin: "https://www.linkedin.com/in/adrika-mondal/",
   },
   {
-    id: 4,
+    id: 3,
     name: "Nilanjana De",
     batch: "2021-2025",
     role: "SDE-1",
     company: "Amazon",
     linkedin: "https://www.linkedin.com/in/nilanjana-de-382bb3233/",
+  },
+  {
+    id: 4,
+    name: "Avik Agarwala",
+    batch: "2021-2025",
+    role: "Systems Engineer",
+    company: "TCS",
+    linkedin: "https://www.linkedin.com/in/avikagarwala/",
   },
 ];
 
