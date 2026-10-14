@@ -2849,42 +2849,247 @@ export const events = [
   },
 ];
 
-export const placementStats = [
+export interface PlacementStat {
+  batch: string;
+  totalStudents: number;
+  eligibleStudents: number;
+  eligibilityCriteria: string;
+  studentsPlaced: number;
+  totalOffers: number;
+  multipleOffers: number;
+  higherStudies: number;
+  placementPercentage: number;
+  status: "Completed" | "Ongoing Drive";
+}
+
+export interface HigherEducationEntry {
+  name: string;
+  batch: string;
+  program: string;
+  institution: string;
+  category?: "International" | "National Premier" | "State/University";
+}
+
+export interface CompanyPlacement {
+  company: string;
+  batch2025: number;
+  batch2026: number;
+  totalOffers: number;
+}
+
+export const placementStats: PlacementStat[] = [
   {
     batch: "2021-2025",
-    totalStudents: 185,
-    eligibleStudents: 121,
-    eligibilityCriteria: "70% in 10th, 12th, Semester average with no year gap",
-    studentsPlaced: 68,
-    placementPercentage: 56.2,
+    totalStudents: 180,
+    eligibleStudents: 155,
+    eligibilityCriteria: "Graduated batch — comprehensive campus recruitment drive",
+    studentsPlaced: 126,
+    totalOffers: 171,
+    multipleOffers: 31,
+    higherStudies: 10,
+    placementPercentage: 70.0,
+    status: "Completed",
+  },
+  {
+    batch: "2022-2026",
+    totalStudents: 180,
+    eligibleStudents: 140,
+    eligibilityCriteria: "Current graduating batch — campus recruitment drive in progress",
+    studentsPlaced: 80,
+    totalOffers: 104,
+    multipleOffers: 21,
+    higherStudies: 10,
+    placementPercentage: 44.7,
+    status: "Ongoing Drive",
   },
 ];
 
-export const higherEducation = [
+export const companyPlacements: CompanyPlacement[] = [
+  { company: "Cognizant", batch2025: 36, batch2026: 8, totalOffers: 44 },
+  { company: "Tata Consultancy Services (TCS)", batch2025: 18, batch2026: 23, totalOffers: 41 },
+  { company: "Capgemini", batch2025: 15, batch2026: 18, totalOffers: 33 },
+  { company: "LTIMindtree", batch2025: 10, batch2026: 16, totalOffers: 26 },
+  { company: "Wipro", batch2025: 16, batch2026: 0, totalOffers: 16 },
+  { company: "American Megatrends (AMI)", batch2025: 6, batch2026: 3, totalOffers: 9 },
+  { company: "PricewaterhouseCoopers (PwC)", batch2025: 3, batch2026: 3, totalOffers: 6 },
+  { company: "Amazon", batch2025: 4, batch2026: 0, totalOffers: 4 },
+  { company: "Genpact", batch2025: 0, batch2026: 4, totalOffers: 4 },
+  { company: "Dexian India", batch2025: 2, batch2026: 2, totalOffers: 4 },
+  { company: "Alien Brains", batch2025: 3, batch2026: 0, totalOffers: 3 },
+  { company: "Innofied Solutions", batch2025: 2, batch2026: 1, totalOffers: 3 },
+  { company: "IEMA R&D Pvt. Ltd.", batch2025: 2, batch2026: 1, totalOffers: 3 },
+  { company: "Ernst & Young (EY)", batch2025: 2, batch2026: 0, totalOffers: 2 },
+  { company: "IBM India", batch2025: 2, batch2026: 0, totalOffers: 2 },
+  { company: "ICICI Bank", batch2025: 0, batch2026: 2, totalOffers: 2 },
+  { company: "Nucleus Software", batch2025: 0, batch2026: 2, totalOffers: 2 },
+  { company: "TEOCO", batch2025: 0, batch2026: 2, totalOffers: 2 },
+  { company: "Weavings Manpower", batch2025: 0, batch2026: 2, totalOffers: 2 },
+  { company: "Abhinava Innovations", batch2025: 0, batch2026: 2, totalOffers: 2 },
+  { company: "Geomaticx", batch2025: 2, batch2026: 0, totalOffers: 2 },
+  { company: "Qspiders", batch2025: 2, batch2026: 0, totalOffers: 2 },
+  { company: "JPMorgan Chase", batch2025: 1, batch2026: 0, totalOffers: 1 },
+  { company: "Deloitte", batch2025: 0, batch2026: 1, totalOffers: 1 },
+  { company: "KPMG", batch2025: 0, batch2026: 1, totalOffers: 1 },
+  { company: "Synopsys", batch2025: 1, batch2026: 0, totalOffers: 1 },
+  { company: "Coditas Solutions", batch2025: 0, batch2026: 1, totalOffers: 1 },
+  { company: "Sasken Technologies", batch2025: 0, batch2026: 1, totalOffers: 1 },
+  { company: "South Eastern Railway", batch2025: 0, batch2026: 1, totalOffers: 1 },
+  { company: "Star Cement (AI/ML Engineer)", batch2025: 1, batch2026: 0, totalOffers: 1 },
+  { company: "Zyptr", batch2025: 0, batch2026: 1, totalOffers: 1 },
+  { company: "Calsoft", batch2025: 1, batch2026: 0, totalOffers: 1 },
+  { company: "NeenOpal", batch2025: 0, batch2026: 1, totalOffers: 1 },
+  { company: "Blue Flame Labs", batch2025: 0, batch2026: 1, totalOffers: 1 },
+  { company: "Heliware", batch2025: 1, batch2026: 0, totalOffers: 1 },
+  { company: "iMerit Technology", batch2025: 1, batch2026: 0, totalOffers: 1 },
+  { company: "Effigo Global", batch2025: 1, batch2026: 0, totalOffers: 1 },
+  { company: "Bajaj Allianz", batch2025: 1, batch2026: 0, totalOffers: 1 },
+  { company: "Extramarks Education", batch2025: 1, batch2026: 0, totalOffers: 1 },
+  { company: "AQM Technologies", batch2025: 0, batch2026: 1, totalOffers: 1 },
+];
+
+export const higherEducation: HigherEducationEntry[] = [
+  // Batch 2022-2026
+  {
+    name: "Surabhi Dutta",
+    batch: "2022-2026",
+    program: "MSc",
+    institution: "University of Bath (United Kingdom)",
+    category: "International",
+  },
+  {
+    name: "Anubhab Mukherjee",
+    batch: "2022-2026",
+    program: "MSc",
+    institution: "Heriot-Watt University (United Kingdom)",
+    category: "International",
+  },
+  {
+    name: "Satyayan Sinha Roy",
+    batch: "2022-2026",
+    program: "M.Tech",
+    institution: "Vellore Institute of Technology (VIT)",
+    category: "National Premier",
+  },
+  {
+    name: "Soumyajeet Panda",
+    batch: "2022-2026",
+    program: "MBA",
+    institution: "T. A. Pai Management Institute (TAPMI), Karnataka",
+    category: "National Premier",
+  },
+  {
+    name: "Priyanshu Saha",
+    batch: "2022-2026",
+    program: "PGDM",
+    institution: "Pune Institute of Business Management (PIBM)",
+    category: "National Premier",
+  },
+  {
+    name: "Shubhojit Nandy",
+    batch: "2022-2026",
+    program: "M.Tech",
+    institution: "Govt. College of Engineering & Ceramic Technology (GCECT)",
+    category: "State/University",
+  },
+  {
+    name: "Souvik Modak",
+    batch: "2022-2026",
+    program: "M.Tech",
+    institution: "Institute of Engineering & Management (IEM), Salt Lake",
+    category: "State/University",
+  },
+  {
+    name: "Rohit Chanda",
+    batch: "2022-2026",
+    program: "M.A.",
+    institution: "Pondicherry University (Central University)",
+    category: "National Premier",
+  },
+  {
+    name: "Prakash Metla",
+    batch: "2022-2026",
+    program: "M.Tech",
+    institution: "Netaji Subhash Engineering College (NSEC)",
+    category: "State/University",
+  },
+  {
+    name: "Tiyasa Paul",
+    batch: "2022-2026",
+    program: "UGC NET Qualified",
+    institution: "National Eligibility Test Qualified for Assistant Professorship / JRF",
+    category: "National Premier",
+  },
+
+  // Batch 2021-2025
   {
     name: "Sumedha Das",
     batch: "2021-2025",
     program: "M.Tech",
-    institution: "Indian Institute of Technology, Bhilai",
+    institution: "Indian Institute of Technology (IIT) Bhilai",
+    category: "National Premier",
   },
   {
-    name: "Rajdeep Mondal",
+    name: "Shrestha Chakraborty",
     batch: "2021-2025",
     program: "M.Tech",
-    institution: "Calcutta University",
+    institution: "National Institute of Technology (NIT) Patna",
+    category: "National Premier",
   },
-  { name: "Irfan Wahid", batch: "2021-2025", program: "MBA", institution: "" },
   {
-    name: "Ishan Roy",
+    name: "Ishan Roy Barman",
     batch: "2021-2025",
     program: "M.Tech",
-    institution: "SRM University",
+    institution: "SRM Institute of Science and Technology, Chennai",
+    category: "National Premier",
+  },
+  {
+    name: "Debalina Bagchi",
+    batch: "2021-2025",
+    program: "MBA",
+    institution: "Amity University, Kolkata",
+    category: "State/University",
+  },
+  {
+    name: "Swarnanka Saha",
+    batch: "2021-2025",
+    program: "MBA",
+    institution: "Amity University, Noida",
+    category: "State/University",
   },
   {
     name: "Sanjana Chatterjee",
     batch: "2021-2025",
     program: "M.Tech",
-    institution: "IEM",
+    institution: "Institute of Engineering & Management (IEM)",
+    category: "State/University",
+  },
+  {
+    name: "Saphalya Das",
+    batch: "2021-2025",
+    program: "M.Tech",
+    institution: "Institute of Engineering & Management (IEM)",
+    category: "State/University",
+  },
+  {
+    name: "Palash Das",
+    batch: "2021-2025",
+    program: "M.Tech",
+    institution: "Higher Studies in Engineering",
+    category: "State/University",
+  },
+  {
+    name: "Rajdeep Mondal",
+    batch: "2021-2025",
+    program: "M.Tech",
+    institution: "Higher Studies in Engineering",
+    category: "State/University",
+  },
+  {
+    name: "Rony Hait",
+    batch: "2021-2025",
+    program: "Post Graduation",
+    institution: "Advanced Postgraduate Studies",
+    category: "State/University",
   },
 ];
 
@@ -3331,18 +3536,24 @@ export const galleryImages = [
 ];
 
 export const recruiters = [
-  "Google",
-  "Microsoft",
   "Amazon",
-  "Adobe",
-  "Goldman Sachs",
-  "Flipkart",
-  "Qualcomm",
-  "Samsung",
-  "Oracle",
-  "Infosys",
-  "TCS",
+  "Cognizant",
+  "Capgemini",
+  "LTIMindtree",
+  "Tata Consultancy Services (TCS)",
   "Wipro",
+  "American Megatrends (AMI)",
+  "PricewaterhouseCoopers (PwC)",
+  "IBM India",
+  "Deloitte",
+  "KPMG",
+  "Ernst & Young (EY)",
+  "JPMorgan Chase",
+  "Synopsys",
+  "Genpact",
+  "Dexian India",
+  "Innofied Solutions",
+  "ICICI Bank",
 ];
 
 export const navLinks = [

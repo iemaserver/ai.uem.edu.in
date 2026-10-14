@@ -206,6 +206,32 @@ DATE: 2026-09-08 (Status: Learned Rule & Publication Author Standardization)
     - Home Page Display Expansion: Updated `NoticesSection.tsx` to display all 7 latest notices in the Home Page's notice list and keep them active in the marquee ticker.
     - Automated Tests & Packaging: Updated unit test suite in `department.test.ts` to assert all 17 notices with 7 top priority notices (19/19 tests green). Rebuilt production bundle and updated `dist.zip` (in workspace root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
 
+37. Full Analysis & Overhaul of Placements & Higher Education (Placement Details.xlsx, departmentData.ts, Placements.tsx, department.test.ts)
+    - Data Extraction & Batch Analysis (Placement Details.xlsx):
+      - Batch 2021–2025: 180 Students | 126 Placed | 171 Total Job Offers | 31 Multiple Offer Holders | 10 Enrolled Higher Studies (+20 Competitive Exam/Prep) | 70.0% Placement Rate.
+      - Batch 2022–2026 (Ongoing Drive): 179 Students | 80 Placed | 104 Total Job Offers | 21 Multiple Offer Holders | 10 Enrolled Higher Studies | 44.7% Placement Rate (in progress).
+    - Higher Education Record Integration:
+      - 20 Students pursuing postgraduate studies documented with program and university details.
+      - International: University of Bath (UK), Heriot-Watt University (UK).
+      - Premier National: IIT Bhilai, NIT Patna, VIT, TAPMI Karnataka, PIBM Pune, Pondicherry University, GCECT, IEM Salt Lake, SRM Chennai, Amity University, UGC NET qualified.
+    - Company-Wise Placement Breakdown:
+      - Computed company-wise offer distribution across both batches (over 40 companies including Cognizant: 44, TCS: 41, Capgemini: 33, LTIMindtree: 26, Wipro: 16, AMI: 9, PwC: 6, Amazon: 4, Genpact: 4, Dexian: 4, EY: 2, IBM: 2, Deloitte: 1, KPMG: 1, etc.).
+    - Placements Page Overhaul (Placements.tsx):
+      - Re-enabled interactive KPI summary metric cards (275+ Total Offers, 206 Placed Students, 20 Higher Studies, 52 Multiple Offers).
+      - Batch-Wise Placement Statistics Table with status badges and comparative metrics.
+      - Searchable Company-Wise Placement Breakdown table with filter toggle.
+      - Tabbed Pursuing Higher Education table with International and Premier badges.
+      - Updated prominent recruiters grid.
+
+38. Refinements to Placements Page Layout & Tables (Placements.tsx, departmentData.ts, department.test.ts)
+    - Batch 2022–2026 Total Students Updated: Adjusted total students count from 179 to 180 in `placementStats` and updated test assertions.
+    - Top Placed Students Section Added: Introduced a dedicated "Top Placed Students" section right before "Pursuing Higher Education", highlighting marquee alumni offers (Amazon SDEs, TCS Systems Engineer) with roles, companies, batch badges, and LinkedIn profile links.
+    - Batch Table Column Adjustments: Removed "Drive Status", "Students Placed", and "Placement %" columns from the batch statistics table to present a focused view on Total Students, Total Job Offers, Multiple Offers, and Higher Studies.
+    - Section Header Renamed: Renamed the batch overview section title to "Batch-Wise Placement and Higher Studies Statistics".
+    - Company Table Removal: Removed the entire Company-Wise Placement Breakdown table and search/filter bar as requested.
+    - KPI Highlight Cards: Streamlined key metric cards to feature Total Placement Offers (275+), Recruiting Partners (30+), Higher Studies Admitted (20), and Multiple Offer Holders (52).
+    - Testing & Build: Verified all 19 unit tests in `department.test.ts` pass cleanly. Rebuilt production bundle and updated `dist.zip` (in workspace root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
+
 ================================================================================
 
 

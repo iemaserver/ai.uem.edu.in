@@ -13,6 +13,7 @@ dist-ssr
 *.local
 *.zip
 *.docx
+*.xlsx
 GEMINI.md
 parsed_*.json
 scratch_*

@@ -5,6 +5,8 @@ import {
   publications,
   annexures,
   placementStats,
+  companyPlacements,
+  higherEducation,
   faculty,
   galleryImages,
   researchHighlights,
@@ -55,13 +57,40 @@ describe("Department Data Integrity", () => {
     expect(uniqueSet.size).toBe(combined.length);
   });
 
-  it("should have complete placement statistics", () => {
-    expect(placementStats.length).toBeGreaterThan(0);
-    const stat = placementStats[0];
-    expect(stat.totalStudents).toBeGreaterThan(0);
-    expect(stat.eligibleStudents).toBeGreaterThan(0);
-    expect(stat.studentsPlaced).toBeGreaterThan(0);
-    expect(stat.placementPercentage).toBeGreaterThan(0);
+  it("should have complete placement statistics for 2021-2025 and 2022-2026 batches", () => {
+    expect(placementStats.length).toBe(2);
+
+    // Batch 2021-2025
+    const batch25 = placementStats.find((s) => s.batch === "2021-2025");
+    expect(batch25).toBeDefined();
+    expect(batch25?.totalStudents).toBe(180);
+    expect(batch25?.studentsPlaced).toBe(126);
+    expect(batch25?.totalOffers).toBe(171);
+    expect(batch25?.multipleOffers).toBe(31);
+    expect(batch25?.higherStudies).toBe(10);
+    expect(batch25?.status).toBe("Completed");
+
+    // Batch 2022-2026
+    const batch26 = placementStats.find((s) => s.batch === "2022-2026");
+    expect(batch26).toBeDefined();
+    expect(batch26?.totalStudents).toBe(180);
+    expect(batch26?.studentsPlaced).toBe(80);
+    expect(batch26?.totalOffers).toBe(104);
+    expect(batch26?.multipleOffers).toBe(21);
+    expect(batch26?.higherStudies).toBe(10);
+    expect(batch26?.status).toBe("Ongoing Drive");
+
+    // Higher Education
+    expect(higherEducation.length).toBe(20);
+    const intlStudents = higherEducation.filter((s) => s.category === "International");
+    expect(intlStudents.length).toBe(2);
+    expect(intlStudents.some((s) => s.name === "Surabhi Dutta")).toBe(true);
+    expect(intlStudents.some((s) => s.name === "Anubhab Mukherjee")).toBe(true);
+
+    // Company Placements
+    expect(companyPlacements.length).toBeGreaterThan(30);
+    const topRecruiter = companyPlacements[0];
+    expect(topRecruiter.totalOffers).toBeGreaterThan(30);
   });
 
   it("should have valid faculty entries", () => {
