@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, MapPin, User } from "lucide-react";
+import { ArrowLeft, MapPin } from "lucide-react";
 import { labs } from "@/data/departmentData";
 
 const LabDetail = () => {
@@ -26,7 +26,6 @@ const LabDetail = () => {
           </Link>
           <h1 className="font-display text-3xl md:text-[38px] font-bold text-primary-foreground">{lab.name}</h1>
           <div className="flex items-center gap-4 mt-2 text-sm text-primary-foreground/70 font-body">
-            <span className="flex items-center gap-1"><User className="w-4 h-4" /> {lab.incharge}</span>
             <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> {lab.location}</span>
           </div>
         </div>

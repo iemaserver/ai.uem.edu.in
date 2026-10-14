@@ -232,6 +232,11 @@ DATE: 2026-09-08 (Status: Learned Rule & Publication Author Standardization)
     - KPI Highlight Cards: Streamlined key metric cards to feature Total Placement Offers (275+), Recruiting Partners (30+), Higher Studies Admitted (20), and Multiple Offer Holders (52).
     - Testing & Build: Verified all 19 unit tests in `department.test.ts` pass cleanly. Rebuilt production bundle and updated `dist.zip` (in workspace root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
 
+39. Removed Faculty In-Charge Names from Laboratories (departmentData.ts, Labs.tsx, LabDetail.tsx)
+    - Labs Data Cleaned: Removed `incharge` property and associated faculty names from all 6 departmental laboratories in `departmentData.ts` (Computing Labs 1–5 and Digital Electronics Lab).
+    - UI Badges Updated: Removed the faculty incharge metadata badge and unused `User` icon from both the laboratory card overview grid (`Labs.tsx`) and the laboratory details banner (`LabDetail.tsx`).
+    - Testing & Packaging: Verified all 19 unit tests in `department.test.ts` pass cleanly. Rebuilt production bundle and updated `dist.zip` (in workspace root and on Desktop at `C:\Users\Prof. Kishan Singh\Desktop\dist.zip`).
+
 ================================================================================
 
 

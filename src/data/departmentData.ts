@@ -2511,7 +2511,6 @@ export const labs = [
   {
     id: "lab-1",
     name: "Computing Lab 1",
-    incharge: "Prof. (Dr.) Sudipta Sahana",
     location: "B1 LG L3",
     description:
       "90 Systems with HP Tiny Desktop equipped with Intel Core i5 7th Gen Processor for programming and software development.",
@@ -2538,7 +2537,6 @@ export const labs = [
   {
     id: "lab-2",
     name: "Computing Lab 2",
-    incharge: "Prof. (Dr.) Aniruddha Ghosh",
     location: "B1 LG L6",
     description:
       "80 Systems with HP Tiny Desktop equipped with Intel Core i5 7th Gen Processor for general computing and lab sessions.",
@@ -2564,7 +2562,6 @@ export const labs = [
   {
     id: "lab-3",
     name: "Computing Lab 3",
-    incharge: "Prof. Anasuya Sengupta",
     location: "B2 LG 3 8",
     description:
       "80 Systems with HP Tiny Desktop equipped with Intel Core i5 7th Gen Processor for advanced computing labs.",
@@ -2590,7 +2587,6 @@ export const labs = [
   {
     id: "lab-4",
     name: "Computing Lab 4",
-    incharge: "Prof. Anjan Kumar Payra",
     location: "B3 LG 3 8",
     description:
       "81 Systems with Dell Small Desktop equipped with Intel Core i5 9th Gen Processor for high-performance computing tasks.",
@@ -2612,7 +2608,6 @@ export const labs = [
   {
     id: "lab-5",
     name: "Computing Lab 5",
-    incharge: "Prof. Debdatta Chatterjee",
     location: "B3 LG 5.5",
     description:
       "91 Systems with Dell Small Desktop equipped with Intel Core i5 9th Gen Processor for research and development.",
@@ -2634,7 +2629,6 @@ export const labs = [
   {
     id: "digital-electronics-lab",
     name: "Digital Electronics Lab",
-    incharge: "Prof. Dr. Himadri Sekhar Panda",
     location: "B2 LG 2.3, 2.4",
     description:
       "Digital Electronics Lab equipped with materials for hands-on learning in digital circuits and electronics systems.",

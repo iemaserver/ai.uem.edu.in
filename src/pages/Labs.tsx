@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, User } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { labs } from "@/data/departmentData";
 
 const Labs = () => (
@@ -22,7 +22,6 @@ const Labs = () => (
               <div className="p-6">
                 <h3 className="font-display font-bold text-lg text-foreground mb-2">{lab.name}</h3>
                 <div className="flex items-center gap-4 mb-3 text-xs text-muted-foreground font-body">
-                  <span className="flex items-center gap-1"><User className="w-3.5 h-3.5" /> {lab.incharge}</span>
                   <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5" /> {lab.location}</span>
                 </div>
                 <p className="text-sm text-muted-foreground font-body line-clamp-2 mb-3">{lab.description}</p>
